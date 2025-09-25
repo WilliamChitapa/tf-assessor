@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>TF证书 – 快速便捷的数字证书</title>
+    <meta
+      name="description"
+      content="通过视频会议在15分钟内颁发数字证书。提供e-CPF、e-CNPJ、SafeID等解决方案，适用于巴西或全球。"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/i/assets/images/favicon.png"
+    />
+    <link rel="stylesheet" href="/i/assets/css/vendor/animate.min.css" />
+    <link rel="stylesheet" href="/i/assets/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="/i/assets/css/plugins/nouislider.min.css" />
+    <link rel="stylesheet" href="/i/assets/css/vendor/magnific-popup.css" />
+    <link rel="stylesheet" href="/i/assets/css/vendor/fontawesome-pro.css" />
+    <link rel="stylesheet" href="/i/assets/css/vendor/spacing.css" />
+    <link rel="stylesheet" href="/i/assets/css/main.css" />
+    <style>
+      :root {
+        --primary-color: #059669;
+        --secondary-color: #059669;
+        --accent-color: #60a5fa;
+        --text-primary: #1f2937;
+        --text-secondary: #6b7280;
+        --bg-light: #f8fafc;
+        --bg-white: #ffffff;
+        --border-color: #e5e7eb;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      /* Hero Section */
+      .hero-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        );
+        color: white;
+        padding: 100px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)" /></svg>');
+        opacity: 0.3;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+      }
+
+      .hero-description {
+        font-size: 20px;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        line-height: 1.6;
+        color: white;
+      }
+
+      .section {
+        padding: 80px 20px;
+      }
+
+      .section-light {
+        background-color: var(--bg-light);
+      }
+
+      .section-white {
+        background-color: var(--bg-white);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title {
+        font-size: 2.75rem;
+        font-weight: 800;
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        border-radius: 2px;
+      }
+
+      .section-description {
+        font-size: 18px;
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .card {
+        background: var(--bg-white);
+        border-radius: 16px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+        border: 1px solid var(--border-color);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--accent-color);
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+      }
+
+      .card-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 25px;
+        border-radius: 20px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+      }
+
+      .card-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 15px;
+      }
+
+      .card-description {
+        font-size: 18px;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 25px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 28px;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+        cursor: pointer;
+        border: none;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, white, var(white));
+        color: white;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        background: rgba(30, 64, 175, 0.3);
+      }
+
+      .btn-outline {
+        background: rgba(30, 64, 175, 0.3);
+        color: white;
+        border: 2px solid var(--primary-color);
+      }
+
+      .btn-outline:hover {
+        background: rgba(56, 79, 155, 0.3);
+        color: white;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 30px;
+        background: var(--bg-white);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+      }
+
+      .feature-item:hover {
+        transform: translateX(5px);
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 18px;
+        flex-shrink: 0;
+      }
+
+      .feature-content h4 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+      }
+
+      .feature-content p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .testimonial {
+        background: var(--bg-white);
+        padding: 40px 30px;
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        position: relative;
+      }
+
+      .testimonial::before {
+        content: '"';
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        font-size: 4rem;
+        color: var(--accent-color);
+        font-family: serif;
+        line-height: 1;
+      }
+
+      .testimonial-content {
+        margin-top: 30px;
+        font-style: italic;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        margin-bottom: 25px;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .author-info h5 {
+        font-weight: 700;
+        color: var(--text-primary);
+        margin: 0;
+        font-size: 1.1rem;
+      }
+
+      .author-info .stars {
+        color: #fbbf24;
+        margin-top: 5px;
+      }
+
+      .stats-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .stat-item {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      .partnership-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .partnership-card {
+        background: var(--bg-white);
+        border-radius: 16px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+      }
+
+      .partnership-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .partnership-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 25px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, #10b981, #059669);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+      }
+
+      .commission-highlight {
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+
+      /* Header Styles */
+      .bd-header-top {
+        background: var(--bg-white);
+        padding: 10px 20px;
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .bd-header-top-left ul,
+      .bd-header-top-right ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+      }
+
+      .bd-header-top-left li a,
+      .bd-header-top-right li a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .bd-header-area {
+        background: var(--bg-white);
+        box-shadow: var(--shadow);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .bd-header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 0;
+      }
+
+      .bd-header-logo img {
+        max-width: 150px;
+      }
+
+      .bd-header-menu nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 30px;
+      }
+
+      .bd-header-menu nav ul li a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+      }
+
+      .bd-header-menu nav ul li a:hover {
+        color: var(--primary-color);
+      }
+
+      .bd-header-right {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .bd-header-meta {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .hamburger-menu {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-primary);
+      }
+
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-white);
+        z-index: 1001;
+        transition: right 0.3s ease;
+        padding: 20px;
+      }
+
+      .mobile-menu.active {
+        right: 0;
+      }
+
+      .mobile-menu ul {
+        list-style: none;
+        padding: 20px;
+        margin: 0;
+      }
+
+      .mobile-menu ul li {
+        margin-bottom: 20px;
+      }
+
+      .mobile-menu ul li a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .mobile-menu .bd-header-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-primary);
+      }
+
+      @media (max-width: 991px) {
+        .bd-header-menu nav {
+          display: none;
+        }
+
+        .hamburger-menu {
+          display: block;
+        }
+
+        .mobile-menu {
+          display: block;
+        }
+
+        .bd-header-top {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+
+        .bd-header-top-left ul,
+        .bd-header-top-right ul {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .bd-header-right {
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .section-title {
+          font-size: 2.2rem;
+        }
+
+        .cards-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .btn-group {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .feature-item {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .testimonials-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .bd-header-logo img {
+          max-width: 120px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="bd-header-top style-two" id="topo">
+        <div class="bd-header-top-left">
+          <ul>
+            <li>
+              <a href="mailto:ti@tffiscal.com.br">
+                <span><i class="fa-sharp fa-light fa-envelope"></i></span>
+                ti@tffiscal.com.br
+              </a>
+            </li>
+            <li>
+              <a href="tel:+5518997284321">
+                <span><i class="fa-solid fa-phone-volume"></i></span>+55 18
+                99728-4321
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="bd-header-top-right text-md-end">
+          <ul>
+            <li>
+              <a href="#">
+                <span><i class="fa-light fa-location-dot"></i></span
+                >巴西圣保罗州普雷西登特普鲁登特市10月12日街1489号，FDS，体育场村，邮编19.015-090
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="bd-header-area header-primary" id="header-sticky">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="bd-header-inner topo">
+                <div class="bd-header-left">
+                  <div class="bd-header-logo">
+                    <a href="./">
+                      <img
+                        src="/i/assets/images/logo.png"
+                        alt="TF Assessor标志"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="bd-header-menu">
+                  <nav class="main-menu d-none d-xl-block">
+                    <ul>
+                      <li>
+                        <a style="font-size: 18px" href="#topo">首页</a>
+                      </li>
+                      <li>
+                        <a style="font-size: 18px" href="#servicos">服务</a>
+                      </li>
+                      <li>
+                        <a style="font-size: 18px" href="#depoimentos"
+                          >客户评价</a
+                        >
+                      </li>
+                      <li>
+                        <a style="font-size: 18px" href="#parceiro"
+                          >成为合作伙伴</a
+                        >
+                      </li>
+                      <li>
+                        <a style="font-size: 18px" href="#contato">联系我们</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="bd-header-right">
+                  <div class="bd-header-meta">
+                    <a href="/i/zh/certificados">
+                      <img
+                        src="/i/assets/images/china.svg"
+                        width="40"
+                        height="auto"
+                        alt="中国"
+                      />
+                    </a>
+                    <a href="/i/br/certificados">
+                      <img
+                        src="/i/assets/images/brasil.svg"
+                        width="40"
+                        height="auto"
+                        alt="巴西"
+                      />
+                    </a>
+                    <a href="/i/en/certificados">
+                      <img
+                        src="/i/assets/images/eua.svg"
+                        width="40"
+                        height="auto"
+                        alt="美国"
+                      />
+                    </a>
+                    <a href="/i/es/certificados">
+                      <img
+                        src="/i/assets/images/espanha.png"
+                        width="40"
+                        height="auto"
+                        alt="西班牙"
+                        style="border-radius: 3px"
+                      />
+                    </a>
+
+                    <a class="bd-btn btn-primary" href="#contato">
+                      联系我们
+                      <i class="fa-regular fa-arrow-right-long"></i>
+                    </a>
+                    <span class="hamburger-menu">
+                      <i
+                        style="font-size: 18px"
+                        class="fa-sharp fa-solid fa-bars"
+                      ></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-menu">
+        <span class="close-menu">
+          <i class="fa-solid fa-times"></i>
+        </span>
+        <ul>
+          <li><a href="#topo">首页</a></li>
+          <li><a href="#servicos">服务</a></li>
+          <li><a href="#depoimentos">客户评价</a></li>
+          <li><a href="#parceiro">成为合作伙伴</a></li>
+          <li><a href="#contato">联系我们</a></li>
+        </ul>
+        <div class="bd-header-meta">
+          <a href="/i/zh/certificados">
+            <img
+              src="/i/assets/images/china.svg"
+              width="40"
+              height="auto"
+              alt="中国"
+            />
+          </a>
+          <a href="/i/br/certificados">
+            <img
+              src="/i/assets/images/brasil.svg"
+              width="40"
+              height="auto"
+              alt="巴西"
+            />
+          </a>
+          <a href="/i/en/certificados">
+            <img
+              src="/i/assets/images/eua.svg"
+              width="40"
+              height="auto"
+              alt="美国"
+            />
+          </a>
+          <a href="/i/es/certificados">
+            <img
+              src="/i/assets/images/espanha.png"
+              width="40"
+              height="auto"
+              alt="西班牙"
+              style="border-radius: 3px"
+            />
+          </a>
+
+          <a class="bd-btn btn-primary" href="#contato">
+            联系我们
+            <i class="fa-regular fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">快速获取数字证书</h1>
+          <p class="hero-subtitle">通过视频会议</p>
+          <p class="hero-description">
+            快速且安全的数字证书颁发。无论您在家中、工作中、巴西还是世界各地，TF
+            Assessor提供最实用的数字解决方案。
+          </p>
+          <div class="btn-group">
+            <a
+              href="https://parceiro.gestaoar.shop/certidoc/tf-fiscal"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              <i class="fa-regular fa-rocket"></i>
+              <p style="color: white">申请证书</p>
+            </a>
+            <a
+              href="https://web.whatsapp.com/send?phone=5518997284321"
+              class="btn btn-outline"
+              target="_blank"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+              <p style="color: white">微信</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-white" id="servicos">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">我们的数字证书</h2>
+            <p class="section-description">
+              选择适合您的证书类型，简单、快速、安全地购买。
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <img
+                  src="/i/img/Certidoc - Certidoc_files/e-cpf.png"
+                  alt="e-CPF"
+                  style="width: 100%; border-radius: 12px"
+                />
+              </div>
+              <div class="feature-content">
+                <h4>e-CPF</h4>
+                <p>适用于个人的数字证书，适合签署文件和访问政府服务。</p>
+                <p><strong>价格：130.00雷亚尔</strong></p>
+                <a
+                  style="font-size: 12px"
+                  href="https://parceiro.gestaoar.shop/certidoc/tf-assessor"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >立即购买</a
+                >
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <img
+                  src="/i/img/Certidoc - Certidoc_files/e-cnpj.png"
+                  alt="e-CNPJ"
+                  style="width: 100%; border-radius: 12px"
+                />
+              </div>
+              <div class="feature-content">
+                <h4>e-CNPJ</h4>
+                <p>适用于公司的数字证书，用于开具电子发票和履行税务义务。</p>
+                <p><strong>价格：200.00雷亚尔</strong></p>
+                <a
+                  style="font-size: 12px"
+                  href="https://parceiro.gestaoar.shop/certidoc/tf-assessor"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >立即购买</a
+                >
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <img
+                  src="/i/img/meet.jpg"
+                  alt="SafeID"
+                  style="width: 100%; border-radius: 12px"
+                />
+              </div>
+              <div class="feature-content">
+                <h4>e-PJ</h4>
+                <p>用于安全认证和电子签名的数字身份应用程序。</p>
+                <p><strong>价格：230.00雷亚尔</strong></p>
+                <a
+                  style="font-size: 12px"
+                  href="https://parceiro.gestaoar.shop/certidoc/tf-assessor"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >立即购买</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">可用证书</h2>
+            <p class="section-description">
+              选择最适合您需求的证书，全部具有法律效力和国内外认可。
+            </p>
+          </div>
+
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-icon">
+                <i class="fa-solid fa-user-check"></i>
+              </div>
+              <h3 class="card-title">推荐计划</h3>
+              <div class="commission-highlight">高达40%的佣金</div>
+              <p class="card-description">
+                推荐客户并在每张颁发的证书上赚取佣金。拥有个性化品牌的电子商务平台，保证在次月10日前支付。
+              </p>
+              <ul
+                style="
+                  text-align: left;
+                  color: var(--text-secondary);
+                  margin-bottom: 25px;
+                "
+              >
+                <li>高达40%的佣金</li>
+                <li>个性化专属平台</li>
+                <li>全面技术支持</li>
+                <li>包含营销材料</li>
+              </ul>
+              <a href="#contato" class="btn btn-primary">成为推荐者</a>
+            </div>
+
+            <div class="partnership-card">
+              <div class="partnership-icon">
+                <i class="fa-solid fa-store"></i>
+              </div>
+              <h3 class="card-title">分销商计划</h3>
+              <div class="commission-highlight">特殊价格</div>
+              <p class="card-description">
+                以特殊价格购买数字证书进行转售。完全自主定价，服务您的客户。
+              </p>
+              <ul
+                style="
+                  text-align: left;
+                  color: var(--text-secondary);
+                  margin-bottom: 25px;
+                "
+              >
+                <li>按量递增折扣</li>
+                <li>完全定价自主权</li>
+                <li>专用技术支持</li>
+                <li>包含全面培训</li>
+              </ul>
+              <a style="font-size: 12px" href="#contato" class="btn btn-primary"
+                >成为分销商</a
+              >
+            </div>
+          </div>
+
+          <div
+            style="
+              text-align: center;
+              margin-top: 50px;
+              padding: 40px;
+              background: var(--bg-white);
+              border-radius: 16px;
+              box-shadow: var(--shadow);
+            "
+          >
+            <h4
+              style="
+                color: var(--text-primary);
+                font-size: 18px;
+                margin-bottom: 20px;
+              "
+            >
+              准备开始您的合作吗？
+            </h4>
+            <p
+              style="
+                color: var(--text-secondary);
+                margin-bottom: 30px;
+                font-size: 18px;
+              "
+            >
+              联系我们，了解如何通过TF Assessor增加您的收入。
+            </p>
+            <div class="btn-group">
+              <a href="#contato" class="btn btn-primary">
+                <i class="fa-solid fa-rocket"></i>
+                <p style="color: white">申请合作</p>
+              </a>
+              <a
+                style="background: var(--secondary-color)"
+                href="https://web.whatsapp.com/send?phone=5518997284321&text=您好！我想了解更多关于CertiDoc合作计划的信息。"
+                class="btn btn-outline"
+                target="_blank"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+                <p style="font-size: 18px; color: white">微信合作</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-white">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">常见问题</h2>
+            <p class="section-description">
+              我们解答关于数字证书的主要疑问，帮助您做出明智的决定。
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-question"></i>
+              </div>
+              <div class="feature-content">
+                <h4>视频会议如何运作？</h4>
+                <p>
+                  流程简单且安全。您预约时间，通过视频会议连接，我们的团队实时验证您的数据。
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div class="feature-content">
+                <h4>需要多长时间收到证书？</h4>
+                <p>
+                  视频会议后，您的证书将在15分钟内颁发，并通过电子邮件直接发送，立即可用。
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-file-certificate"></i>
+              </div>
+              <div class="feature-content">
+                <h4>需要哪些文件？</h4>
+                <p>
+                  e-CPF需要身份证、CPF和居住证明。e-CNPJ还需要公司文件，如公司章程和CNPJ。
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-shield-check"></i>
+              </div>
+              <div class="feature-content">
+                <h4>安全且具有法律效力吗？</h4>
+                <p>
+                  是的，我们的证书符合ICP-Brasil所有标准，具有完整的法律效力，被公共和私人机构接受。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-section">
+        <div class="container">
+          <h2 class="section-title" style="color: white; margin-bottom: 50px">
+            令人信服的数字
+          </h2>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-number">16+</span>
+              <span class="stat-label">年经验</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">10,000+</span>
+              <span class="stat-label">已颁发证书</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">5.0</span>
+              <span class="stat-label">谷歌评分</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">400+</span>
+              <span class="stat-label">正面评价</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-white" id="depoimentos">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">客户评价</h2>
+            <p class="section-description">
+              TF
+              Assessor在谷歌上获得最高评分。超过400名客户分享了他们的正面体验。
+            </p>
+          </div>
+
+          <div class="testimonials-grid">
+            <div class="testimonial">
+              <p class="testimonial-content">
+                TF
+                Assessor提供的服务超出了我的所有期望。他们关注我情况的每一个细节，甚至提供了额外信息。我强烈推荐这家公司，服务出色且高度个性化。
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar">CM</div>
+                <div class="author-info">
+                  <h5>Cereri de Mello</h5>
+                  <div class="stars">★★★★★ 5.0</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial">
+              <p class="testimonial-content">
+                我与TF
+                Assessor的体验非常好，我非常满意。之前我通过另一家公司获得数字证书，所以有些犹豫，但尝试了TF
+                Assessor的在线系统后，服务清晰、直接且友好。
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar">GB</div>
+                <div class="author-info">
+                  <h5>Geraldo Beltrani</h5>
+                  <div class="stars">★★★★★ 5.0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-light" id="contato">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">联系我们</h2>
+            <p class="section-description">
+              我们的专业团队随时为您提供服务。选择最方便的联系方式。
+            </p>
+          </div>
+
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <h3 class="card-title">微信</h3>
+              <p class="card-description">
+                通过微信获得快速和个性化的服务。直接通过聊天咨询问题并申请您的证书。
+              </p>
+              <a
+                href="https://web.whatsapp.com/send?phone=5518997284321&text=您好！我想申请我的数字证书。"
+                class="btn btn-primary"
+                target="_blank"
+                style="font-size: 14px"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+                在微信上聊天
+              </a>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <h3 class="card-title">电子邮件</h3>
+              <p class="card-description">
+                通过电子邮件发送您的请求，获得详细的支持和所有必要信息。
+              </p>
+              <a
+                href="mailto:ti@tffiscal.com.br?subject=数字证书申请"
+                class="btn btn-primary"
+                style="font-size: 14px"
+              >
+                <i class="fa-solid fa-envelope"></i>
+                发送电子邮件
+              </a>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <h3 class="card-title">电话</h3>
+              <p class="card-description">
+                直接通过电话与我们的团队联系。服务时间：周一至周五，早上8点至下午6点。
+              </p>
+              <a
+                href="tel:+5518997284321"
+                class="btn btn-primary"
+                style="font-size: 14px"
+              >
+                <i class="fa-solid fa-phone"></i>
+                立即拨打
+              </a>
+            </div>
+          </div>
+
+          <div
+            style="
+              text-align: center;
+              margin-top: 50px;
+              padding: 40px;
+              background: var(--bg-white);
+              border-radius: 16px;
+              box-shadow: var(--shadow);
+            "
+          >
+            <h4
+              style="
+                color: var(--text-primary);
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+              "
+            >
+              🚀 准备好获取您的数字证书了吗？
+            </h4>
+            <p
+              style="
+                color: var(--text-secondary);
+                margin-bottom: 30px;
+                font-size: 18px;
+              "
+            >
+              几分钟内颁发 • 通过视频会议 • 巴西全国有效
+            </p>
+            <a
+              href="https://parceiro.gestaoar.shop/certidoc/tf-fiscal"
+              class="btn btn-primary"
+              target="_blank"
+              style="font-size: 1.1rem; padding: 16px 32px"
+            >
+              <i class="fa-solid fa-rocket"></i>
+              <p style="color: white">立即申请</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="bd-footer-bottom">
+        <div class="bd-footer-menu">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-12">
+                <div class="bd-footer-menu-content">
+                  <img
+                    src="/i/assets/images/logo.png"
+                    width="250"
+                    height="auto"
+                    alt="CertiDoc标志"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bd-footer-copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-12">
+                <div class="bd-footer-copyright-content">
+                  <p class="bd-footer-copyright-text mb-0">
+                    自2007年起版权所有
+                    <span class="text-title fw-bold">TF Assessor</span
+                    >。保留所有权利。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      class="progress-wrap"
+      style="position: fixed; bottom: 24px; left: 24px; z-index: 1000"
+    >
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+
+    <a
+      class="contact-badge"
+      href="https://web.whatsapp.com/send?phone=5518997284321&amp;text=您好！我想了解更多关于CertiDoc的信息。"
+      target="_blank"
+    ></a>
+    <style>
+      .contact-badge {
+        position: fixed;
+        cursor: pointer;
+        color: #fff;
+        height: 42px;
+        line-height: 42px;
+        transition: 0.3s;
+        background-image: url("/i/br/assets/images/whatsapp.png");
+        display: block;
+        width: 55px;
+        height: 55px;
+        background-size: 100% auto;
+        right: 30px;
+        bottom: 30px;
+        z-index: 999999;
+        border-radius: 30px;
+      }
+
+      .contact-badge:hover {
+        width: 65px;
+        height: 65px;
+      }
+    </style>
+
+    <script
+      data-cfasync="false"
+      src="/i/br/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script src="/i/br/assets/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="/i/br/assets/js/plugins/waypoints.min.js"></script>
+    <script src="/i/br/assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="/i/br/assets/js/plugins/swiper.min.js"></script>
+    <script src="/i/br/assets/js/plugins/wow.js"></script>
+    <script src="/i/br/assets/js/vendor/magnific-popup.min.js"></script>
+    <script src="/i/br/assets/js/vendor/isotope.pkgd.min.js"></script>
+    <script src="/i/br/assets/js/vendor/imagesloaded.pkgd.min.js"></script>
+    <script src="/i/br/assets/js/plugins/nice-select.min.js"></script>
+    <script src="/i/br/assets/js/plugins/nouislider.min.js"></script>
+    <script src="/i/br/assets/js/vendor/ajax-form.js"></script>
+    <script src="/i/br/assets/js/plugins/easypie.js"></script>
+    <script src="/i/br/assets/js/vendor/purecounter.js"></script>
+    <script src="/i/br/assets/js/vendor/backtotop.js"></script>
+    <script src="/i/br/assets/js/main.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".hamburger-menu").click(function () {
+          $(".mobile-menu").toggleClass("active");
+        });
+
+        $(".close-menu").click(function () {
+          $(".mobile-menu").removeClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>

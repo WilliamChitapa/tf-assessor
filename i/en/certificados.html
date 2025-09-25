@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>TF Certificates – Easy and Fast Digital Certificates</title>
+    <meta
+      name="description"
+      content="Issuance of digital certificates via videoconference in 15 minutes. Solutions for e-CPF, e-CNPJ, SafeID, and more, in Brazil or worldwide."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/i/assets/images/favicon.png"
+    />
+    <link rel="stylesheet" href="/i/assets/css/vendor/animate.min.css" />
+    <link rel="stylesheet" href="/i/assets/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="/i/assets/css/plugins/nouislider.min.css" />
+    <link rel="stylesheet" href="/i/assets/css/vendor/magnific-popup.css" />
+    <link rel="stylesheet" href="/i/assets/css/vendor/fontawesome-pro.css" />
+    <link rel="stylesheet" href="/i/assets/css/vendor/spacing.css" />
+    <link rel="stylesheet" href="/i/assets/css/main.css" />
+    <style>
+      :root {
+        --primary-color: #059669;
+        --secondary-color: #059669;
+        --accent-color: #60a5fa;
+        --text-primary: #1f2937;
+        --text-secondary: #6b7280;
+        --bg-light: #f8fafc;
+        --bg-white: #ffffff;
+        --border-color: #e5e7eb;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      /* Hero Section */
+      .hero-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        );
+        color: white;
+        padding: 100px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)" /></svg>');
+        opacity: 0.3;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+      }
+
+      .hero-description {
+        font-size: 20px;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        line-height: 1.6;
+        color: white;
+      }
+
+      .section {
+        padding: 80px 20px;
+      }
+
+      .section-light {
+        background-color: var(--bg-light);
+      }
+
+      .section-white {
+        background-color: var(--bg-white);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title {
+        font-size: 2.75rem;
+        font-weight: 800;
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        border-radius: 2px;
+      }
+
+      .section-description {
+        font-size: 18px;
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .card {
+        background: var(--bg-white);
+        border-radius: 16px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+        border: 1px solid var(--border-color);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--accent-color);
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+      }
+
+      .card-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 25px;
+        border-radius: 20px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+      }
+
+      .card-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 15px;
+      }
+
+      .card-description {
+        font-size: 18px;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 25px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 28px;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+        cursor: pointer;
+        border: none;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, white, var(white));
+        color: white;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        background: rgba(30, 64, 175, 0.3);
+      }
+
+      .btn-outline {
+        background: rgba(30, 64, 175, 0.3);
+        color: white;
+        border: 2px solid var(--primary-color);
+      }
+
+      .btn-outline:hover {
+        background: rgba(56, 79, 155, 0.3);
+        color: white;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 30px;
+        background: var(--bg-white);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+      }
+
+      .feature-item:hover {
+        transform: translateX(5px);
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 18px;
+        flex-shrink: 0;
+      }
+
+      .feature-content h4 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+      }
+
+      .feature-content p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .testimonial {
+        background: var(--bg-white);
+        padding: 40px 30px;
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        position: relative;
+      }
+
+      .testimonial::before {
+        content: '"';
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        font-size: 4rem;
+        color: var(--accent-color);
+        font-family: serif;
+        line-height: 1;
+      }
+
+      .testimonial-content {
+        margin-top: 30px;
+        font-style: italic;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        margin-bottom: 25px;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .author-info h5 {
+        font-weight: 700;
+        color: var(--text-primary);
+        margin: 0;
+        font-size: 1.1rem;
+      }
+
+      .author-info .stars {
+        color: #fbbf24;
+        margin-top: 5px;
+      }
+
+      .stats-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .stat-item {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      .partnership-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .partnership-card {
+        background: var(--bg-white);
+        border-radius: 16px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+      }
+
+      .partnership-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .partnership-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 25px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, #10b981, #059669);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+      }
+
+      .commission-highlight {
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+
+      /* Header Styles */
+      .bd-header-top {
+        background: var(--bg-white);
+        padding: 10px 20px;
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .bd-header-top-left ul,
+      .bd-header-top-right ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+      }
+
+      .bd-header-top-left li a,
+      .bd-header-top-right li a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .bd-header-area {
+        background: var(--bg-white);
+        box-shadow: var(--shadow);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .bd-header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 0;
+      }
+
+      .bd-header-logo img {
+        max-width: 150px;
+      }
+
+      .bd-header-menu nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 30px;
+      }
+
+      .bd-header-menu nav ul li a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+      }
+
+      .bd-header-menu nav ul li a:hover {
+        color: var(--primary-color);
+      }
+
+      .bd-header-right {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .bd-header-meta {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .hamburger-menu {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-primary);
+      }
+
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-white);
+        z-index: 1001;
+        transition: right 0.3s ease;
+        padding: 20px;
+      }
+
+      .mobile-menu.active {
+        right: 0;
+      }
+
+      .mobile-menu ul {
+        list-style: none;
+        padding: 20px;
+        margin: 0;
+      }
+
+      .mobile-menu ul li {
+        margin-bottom: 20px;
+      }
+
+      .mobile-menu ul li a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .mobile-menu .bd-header-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-primary);
+      }
+
+      @media (max-width: 991px) {
+        .bd-header-menu nav {
+          display: none;
+        }
+
+        .hamburger-menu {
+          display: block;
+        }
+
+        .mobile-menu {
+          display: block;
+        }
+
+        .bd-header-top {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+
+        .bd-header-top-left ul,
+        .bd-header-top-right ul {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .bd-header-right {
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .section-title {
+          font-size: 2.2rem;
+        }
+
+        .cards-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .btn-group {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .feature-item {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .testimonials-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .bd-header-logo img {
+          max-width: 120px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="bd-header-top style-two" id="topo">
+        <div class="bd-header-top-left">
+          <ul>
+            <li>
+              <a href="mailto:ti@tffiscal.com.br">
+                <span><i class="fa-sharp fa-light fa-envelope"></i></span>
+                ti@tffiscal.com.br
+              </a>
+            </li>
+            <li>
+              <a href="tel:+5518997284321">
+                <span><i class="fa-solid fa-phone-volume"></i></span>+55 18
+                99728-4321
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="bd-header-top-right text-md-end">
+          <ul>
+            <li>
+              <a href="#">
+                <span><i class="fa-light fa-location-dot"></i></span>Rua 12 de
+                Outubro, 1489, FDS, Vila do Estádio, Presidente Prudente/SP -
+                Brazil - ZIP 19.015-090
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="bd-header-area header-primary" id="header-sticky">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="bd-header-inner topo">
+                <div class="bd-header-left">
+                  <div class="bd-header-logo">
+                    <a href="./">
+                      <img
+                        src="/i/assets/images/logo.png"
+                        alt="Logo TF Assessor"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="bd-header-menu">
+                  <nav class="main-menu d-none d-xl-block">
+                    <ul>
+                      <li>
+                        <a style="font-size: 18px" href="#topo">Home</a>
+                      </li>
+                      <li>
+                        <a style="font-size: 18px" href="#servicos">Services</a>
+                      </li>
+                      <li>
+                        <a style="font-size: 18px" href="#depoimentos"
+                          >Testimonials</a
+                        >
+                      </li>
+                      <li>
+                        <a style="font-size: 18px" href="#parceiro"
+                          >Become a Partner</a
+                        >
+                      </li>
+                      <li>
+                        <a style="font-size: 18px" href="#contato">Contact</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="bd-header-right">
+                  <div class="bd-header-meta">
+                    <a href="/i/zh/certificados">
+                      <img
+                        src="/i/assets/images/china.svg"
+                        width="40"
+                        height="auto"
+                        alt="China"
+                      />
+                    </a>
+                    <a href="/i/br/certificados">
+                      <img
+                        src="/i/assets/images/brasil.svg"
+                        width="40"
+                        height="auto"
+                        alt="Brazil"
+                      />
+                    </a>
+                    <a href="/i/en/certificados">
+                      <img
+                        src="/i/assets/images/eua.svg"
+                        width="40"
+                        height="auto"
+                        alt="USA"
+                      />
+                    </a>
+                    <a href="/i/es/certificados">
+                      <img
+                        src="/i/assets/images/espanha.png"
+                        width="40"
+                        height="auto"
+                        alt="Spain"
+                        style="border-radius: 3px"
+                      />
+                    </a>
+
+                    <a class="bd-btn btn-primary" href="#contato">
+                      Contact Us
+                      <i class="fa-regular fa-arrow-right-long"></i>
+                    </a>
+                    <span class="hamburger-menu">
+                      <i
+                        style="font-size: 18px"
+                        class="fa-sharp fa-solid fa-bars"
+                      ></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-menu">
+        <span class="close-menu">
+          <i class="fa-solid fa-times"></i>
+        </span>
+        <ul>
+          <li><a href="#topo">Home</a></li>
+          <li><a href="#servicos">Services</a></li>
+          <li><a href="#depoimentos">Testimonials</a></li>
+          <li><a href="#parceiro">Become a Partner</a></li>
+          <li><a href="#contato">Contact</a></li>
+        </ul>
+        <div class="bd-header-meta">
+          <a href="/i/zh/certificados">
+            <img
+              src="/i/assets/images/china.svg"
+              width="40"
+              height="auto"
+              alt="China"
+            />
+          </a>
+          <a href="/i/br/certificados">
+            <img
+              src="/i/assets/images/brasil.svg"
+              width="40"
+              height="auto"
+              alt="Brazil"
+            />
+          </a>
+          <a href="/i/en/certificados">
+            <img
+              src="/i/assets/images/eua.svg"
+              width="40"
+              height="auto"
+              alt="USA"
+            />
+          </a>
+          <a href="/i/es/certificados">
+            <img
+              src="/i/assets/images/espanha.png"
+              width="40"
+              height="auto"
+              alt="Spain"
+              style="border-radius: 3px"
+            />
+          </a>
+
+          <a class="bd-btn btn-primary" href="#contato">
+            Contact Us
+            <i class="fa-regular fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">Digital Certificate in No Time</h1>
+          <p class="hero-subtitle">Via Videoconference</p>
+          <p class="hero-description">
+            Fast and secure issuance of digital certificates. From home, work,
+            Brazil, or anywhere in the world. TF Assessor offers the most
+            practical solution for your digital needs.
+          </p>
+          <div class="btn-group">
+            <a
+              href="https://parceiro.gestaoar.shop/certidoc/tf-fiscal"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              <i class="fa-regular fa-rocket"></i>
+              <p style="color: white">Request Certificate</p>
+            </a>
+            <a
+              href="https://web.whatsapp.com/send?phone=5518997284321"
+              class="btn btn-outline"
+              target="_blank"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+              <p style="color: white">WhatsApp</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-white" id="servicos">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Our Digital Certificates</h2>
+            <p class="section-description">
+              Choose the ideal certificate type for you and purchase it simply,
+              quickly, and securely.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <img
+                  src="/i/img/Certidoc - Certidoc_files/e-cpf.png"
+                  alt="e-CPF"
+                  style="width: 100%; border-radius: 12px"
+                />
+              </div>
+              <div class="feature-content">
+                <h4>e-CPF</h4>
+                <p>
+                  Digital certificate for individuals, ideal for signing
+                  documents and accessing government services.
+                </p>
+                <p><strong>Price: R$ 130.00</strong></p>
+                <a
+                  style="font-size: 12px"
+                  href="https://parceiro.gestaoar.shop/certidoc/tf-assessor"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <img
+                  src="/i/img/Certidoc - Certidoc_files/e-cnpj.png"
+                  alt="e-CNPJ"
+                  style="width: 100%; border-radius: 12px"
+                />
+              </div>
+              <div class="feature-content">
+                <h4>e-CNPJ</h4>
+                <p>
+                  Digital certificate for companies, required for issuing
+                  electronic invoices and fulfilling tax obligations.
+                </p>
+                <p><strong>Price: R$ 200.00</strong></p>
+                <a
+                  style="font-size: 12px"
+                  href="https://parceiro.gestaoar.shop/certidoc/tf-assessor"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <img
+                  src="/i/img/meet.jpg"
+                  alt="SafeID"
+                  style="width: 100%; border-radius: 12px"
+                />
+              </div>
+              <div class="feature-content">
+                <h4>e-PJ</h4>
+                <p>
+                  Digital identity application for secure authentication and
+                  electronic signatures.
+                </p>
+                <p><strong>Price: R$ 230.00</strong></p>
+                <a
+                  style="font-size: 12px"
+                  href="https://parceiro.gestaoar.shop/certidoc/tf-assessor"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Available Certificates</h2>
+            <p class="section-description">
+              Choose the certificate that best suits your needs. All with legal
+              validity and national and international recognition.
+            </p>
+          </div>
+
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-icon">
+                <i class="fa-solid fa-user-check"></i>
+              </div>
+              <h3 class="card-title">Referral Program</h3>
+              <div class="commission-highlight">Up to 40% Commission</div>
+              <p class="card-description">
+                Refer clients and earn a commission on each issued certificate.
+                Personalized e-commerce with your brand and guaranteed payout by
+                the 10th of the following month.
+              </p>
+              <ul
+                style="
+                  text-align: left;
+                  color: var(--text-secondary);
+                  margin-bottom: 25px;
+                "
+              >
+                <li>Commissions up to 40%</li>
+                <li>Customized proprietary platform</li>
+                <li>Full technical support</li>
+                <li>Marketing materials included</li>
+              </ul>
+              <a href="#contato" class="btn btn-primary">Become a Referrer</a>
+            </div>
+
+            <div class="partnership-card">
+              <div class="partnership-icon">
+                <i class="fa-solid fa-store"></i>
+              </div>
+              <h3 class="card-title">Reseller Program</h3>
+              <div class="commission-highlight">Special Prices</div>
+              <p class="card-description">
+                Purchase digital certificates at special prices for resale. Have
+                full autonomy to set your prices and serve your clients.
+              </p>
+              <ul
+                style="
+                  text-align: left;
+                  color: var(--text-secondary);
+                  margin-bottom: 25px;
+                "
+              >
+                <li>Progressive volume discounts</li>
+                <li>Complete pricing autonomy</li>
+                <li>Dedicated technical support</li>
+                <li>Comprehensive training included</li>
+              </ul>
+              <a style="font-size: 12px" href="#contato" class="btn btn-primary"
+                >Become a Reseller</a
+              >
+            </div>
+          </div>
+
+          <div
+            style="
+              text-align: center;
+              margin-top: 50px;
+              padding: 40px;
+              background: var(--bg-white);
+              border-radius: 16px;
+              box-shadow: var(--shadow);
+            "
+          >
+            <h4
+              style="
+                color: var(--text-primary);
+                font-size: 18px;
+                margin-bottom: 20px;
+              "
+            >
+              Ready to Start Your Partnership?
+            </h4>
+            <p
+              style="
+                color: var(--text-secondary);
+                margin-bottom: 30px;
+                font-size: 18px;
+              "
+            >
+              Contact us and discover how you can increase your income with TF
+              Assessor.
+            </p>
+            <div class="btn-group">
+              <a href="#contato" class="btn btn-primary">
+                <i class="fa-solid fa-rocket"></i>
+                <p style="color: white">Request Partnership</p>
+              </a>
+              <a
+                style="background: var(--secondary-color)"
+                href="https://web.whatsapp.com/send?phone=5518997284321&text=Hello! I would like to know more about CertiDoc's partnership programs."
+                class="btn btn-outline"
+                target="_blank"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+                <p style="font-size: 18px; color: white">
+                  WhatsApp Partnerships
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-white">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-description">
+              We clarify the main doubts about digital certification to help you
+              make an informed decision.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-question"></i>
+              </div>
+              <div class="feature-content">
+                <h4>How does the videoconference work?</h4>
+                <p>
+                  The process is simple and secure. You schedule a time, connect
+                  via videoconference, and our team validates your data in
+                  real-time.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div class="feature-content">
+                <h4>How long does it take to receive?</h4>
+                <p>
+                  After the videoconference, your certificate is issued within
+                  15 minutes and sent directly to your email, ready for
+                  immediate use.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-file-certificate"></i>
+              </div>
+              <div class="feature-content">
+                <h4>What documents do I need?</h4>
+                <p>
+                  ID, CPF, and proof of residence for e-CPF. For e-CNPJ, company
+                  documents such as the articles of incorporation and CNPJ are
+                  also required.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-shield-check"></i>
+              </div>
+              <div class="feature-content">
+                <h4>Is it secure and legally valid?</h4>
+                <p>
+                  Yes, our certificates comply with all ICP-Brazil standards and
+                  have full legal validity, accepted by public and private
+                  institutions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-section">
+        <div class="container">
+          <h2 class="section-title" style="color: white; margin-bottom: 50px">
+            Numbers That Inspire Trust
+          </h2>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-number">16+</span>
+              <span class="stat-label">Years of Experience</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">10,000+</span>
+              <span class="stat-label">Certificates Issued</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">5.0</span>
+              <span class="stat-label">Google Rating</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">400+</span>
+              <span class="stat-label">Positive Reviews</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-white" id="depoimentos">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-description">
+              TF Assessor has a maximum Google rating. Over 400 clients have
+              shared their positive experiences with us.
+            </p>
+          </div>
+
+          <div class="testimonials-grid">
+            <div class="testimonial">
+              <p class="testimonial-content">
+                The service provided by TF Assessor exceeded all expectations.
+                They took care of every detail of my situation and even provided
+                additional information. I highly recommend the company;
+                excellent and highly personalized service.
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar">CM</div>
+                <div class="author-info">
+                  <h5>Cereri de Mello</h5>
+                  <div class="stars">★★★★★ 5.0</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial">
+              <p class="testimonial-content">
+                My experience with TF Assessor was the best possible; I was very
+                satisfied. I was hesitant because I previously obtained my
+                digital certificate from another company, but I took a chance
+                with TF Assessor's online system, and the service was clear,
+                objective, and friendly.
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar">GB</div>
+                <div class="author-info">
+                  <h5>Geraldo Beltrani</h5>
+                  <div class="stars">★★★★★ 5.0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-light" id="contato">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-description">
+              Our specialized team is ready to assist you. Choose the most
+              convenient way to contact us.
+            </p>
+          </div>
+
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <h3 class="card-title">WhatsApp</h3>
+              <p class="card-description">
+                Fast and personalized service via WhatsApp. Ask your questions
+                and request your certificate directly through chat.
+              </p>
+              <a
+                href="https://web.whatsapp.com/send?phone=5518997284321&text=Hello! I would like to request my digital certificate."
+                class="btn btn-primary"
+                target="_blank"
+                style="font-size: 14px"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+                Chat on WhatsApp
+              </a>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <h3 class="card-title">Email</h3>
+              <p class="card-description">
+                Send your request via email and receive detailed support with
+                all the necessary information.
+              </p>
+              <a
+                href="mailto:ti@tffiscal.com.br?subject=Digital Certificate Request"
+                class="btn btn-primary"
+                style="font-size: 14px"
+              >
+                <i class="fa-solid fa-envelope"></i>
+                Send Email
+              </a>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <h3 class="card-title">Phone</h3>
+              <p class="card-description">
+                Speak directly with our team by phone. Service hours: Monday to
+                Friday, from 8 AM to 6 PM.
+              </p>
+              <a
+                href="tel:+5518997284321"
+                class="btn btn-primary"
+                style="font-size: 14px"
+              >
+                <i class="fa-solid fa-phone"></i>
+                Call Now
+              </a>
+            </div>
+          </div>
+
+          <div
+            style="
+              text-align: center;
+              margin-top: 50px;
+              padding: 40px;
+              background: var(--bg-white);
+              border-radius: 16px;
+              box-shadow: var(--shadow);
+            "
+          >
+            <h4
+              style="
+                color: var(--text-primary);
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+              "
+            >
+              🚀 Ready for Your Digital Certificate?
+            </h4>
+            <p
+              style="
+                color: var(--text-secondary);
+                margin-bottom: 30px;
+                font-size: 18px;
+              "
+            >
+              Issued in minutes • Via videoconference • Valid throughout Brazil
+            </p>
+            <a
+              href="https://parceiro.gestaoar.shop/certidoc/tf-fiscal"
+              class="btn btn-primary"
+              target="_blank"
+              style="font-size: 1.1rem; padding: 16px 32px"
+            >
+              <i class="fa-solid fa-rocket"></i>
+              <p style="color: white">Request Now</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="bd-footer-bottom">
+        <div class="bd-footer-menu">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-12">
+                <div class="bd-footer-menu-content">
+                  <img
+                    src="/i/assets/images/logo.png"
+                    width="250"
+                    height="auto"
+                    alt="Logo CertiDoc"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bd-footer-copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-12">
+                <div class="bd-footer-copyright-content">
+                  <p class="bd-footer-copyright-text mb-0">
+                    Copyright since 2007
+                    <span class="text-title fw-bold">TF Assessor</span>. All
+                    rights reserved.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      class="progress-wrap"
+      style="position: fixed; bottom: 24px; left: 24px; z-index: 1000"
+    >
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+
+    <a
+      class="contact-badge"
+      href="https://web.whatsapp.com/send?phone=5518997284321&amp;text=Hello!%20I%20would%20like%20to%20talk%20about%20CertiDoc."
+      target="_blank"
+    ></a>
+    <style>
+      .contact-badge {
+        position: fixed;
+        cursor: pointer;
+        color: #fff;
+        height: 42px;
+        line-height: 42px;
+        transition: 0.3s;
+        background-image: url("/i/br/assets/images/whatsapp.png");
+        display: block;
+        width: 55px;
+        height: 55px;
+        background-size: 100% auto;
+        right: 30px;
+        bottom: 30px;
+        z-index: 999999;
+        border-radius: 30px;
+      }
+
+      .contact-badge:hover {
+        width: 65px;
+        height: 65px;
+      }
+    </style>
+
+    <script
+      data-cfasync="false"
+      src="/i/br/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script src="/i/br/assets/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="/i/br/assets/js/plugins/waypoints.min.js"></script>
+    <script src="/i/br/assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="/i/br/assets/js/plugins/swiper.min.js"></script>
+    <script src="/i/br/assets/js/plugins/wow.js"></script>
+    <script src="/i/br/assets/js/vendor/magnific-popup.min.js"></script>
+    <script src="/i/br/assets/js/vendor/isotope.pkgd.min.js"></script>
+    <script src="/i/br/assets/js/vendor/imagesloaded.pkgd.min.js"></script>
+    <script src="/i/br/assets/js/plugins/nice-select.min.js"></script>
+    <script src="/i/br/assets/js/plugins/nouislider.min.js"></script>
+    <script src="/i/br/assets/js/vendor/ajax-form.js"></script>
+    <script src="/i/br/assets/js/plugins/easypie.js"></script>
+    <script src="/i/br/assets/js/vendor/purecounter.js"></script>
+    <script src="/i/br/assets/js/vendor/backtotop.js"></script>
+    <script src="/i/br/assets/js/main.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".hamburger-menu").click(function () {
+          $(".mobile-menu").toggleClass("active");
+        });
+
+        $(".close-menu").click(function () {
+          $(".mobile-menu").removeClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>

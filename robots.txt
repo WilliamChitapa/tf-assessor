@@ -1,0 +1,19 @@
+# robots.txt for tfassessor.com.br
+User-agent: *
+Allow: /
+
+# Explicit allowances for engines used in China
+User-agent: Baiduspider
+Allow: /
+User-agent: 360Spider
+Allow: /
+User-agent: Sogou web spider
+Allow: /
+User-agent: YisouSpider
+Allow: /
+
+# Sitemaps
+Sitemap: https://tfassessor.com.br/sitemap.xml
+Sitemap: https://tfassessor.com.br/sitemap_pages.xml
+Sitemap: https://tfassessor.com.br/sitemap_images.xml
+Sitemap: https://tfassessor.com.br/sitemap_index.xml
