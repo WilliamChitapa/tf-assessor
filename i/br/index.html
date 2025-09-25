@@ -3,95 +3,696 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>TF Assessor – Sua ponte entre a China e o Brasil.</title>
+    <title>TF Certificados – Certificados Digitais Fáceis e Rápidos</title>
     <meta
       name="description"
-      content="Consultoria empresarial para estrangeiros no Brasil. Soluções completas em sistemas, cidadania, recursos humanos, contabilidade e direito internacional."
+      content="Emissão de certificados digitais via videoconferência em 15 minutos. Soluções para e-CPF, e-CNPJ, SafeID e mais, no Brasil ou em qualquer lugar do mundo."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="assets/images/favicon.png"
+      href="/i/assets/images/favicon.png"
     />
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/vendor/animate.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/nouislider.min.css" />
-    <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css" />
-    <link rel="stylesheet" href="assets/css/vendor/fontawesome-pro.css" />
-    <link rel="stylesheet" href="assets/css/vendor/spacing.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="/i/assets/css/vendor/animate.min.css" />
+    <link rel="stylesheet" href="/i/assets/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="/i/assets/css/plugins/nouislider.min.css" />
+    <link rel="stylesheet" href="/i/assets/css/vendor/magnific-popup.css" />
+    <link rel="stylesheet" href="/i/assets/css/vendor/fontawesome-pro.css" />
+    <link rel="stylesheet" href="/i/assets/css/vendor/spacing.css" />
+    <link rel="stylesheet" href="/i/assets/css/main.css" />
+    <style>
+      :root {
+        --primary-color: #059669;
+        --secondary-color: #059669;
+        --accent-color: #60a5fa;
+        --text-primary: #1f2937;
+        --text-secondary: #6b7280;
+        --bg-light: #f8fafc;
+        --bg-white: #ffffff;
+        --border-color: #e5e7eb;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      /* Hero Section */
+      .hero-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        );
+        color: white;
+        padding: 100px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)" /></svg>');
+        opacity: 0.3;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+      }
+
+      .hero-description {
+        font-size: 20px;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        line-height: 1.6;
+        color: white;
+      }
+
+      .section {
+        padding: 80px 20px;
+      }
+
+      .section-light {
+        background-color: var(--bg-light);
+      }
+
+      .section-white {
+        background-color: var(--bg-white);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title {
+        font-size: 2.75rem;
+        font-weight: 800;
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        border-radius: 2px;
+      }
+
+      .section-description {
+        font-size: 18px;
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .card {
+        background: var(--bg-white);
+        border-radius: 16px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+        border: 1px solid var(--border-color);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--accent-color);
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+      }
+
+      .card-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 25px;
+        border-radius: 20px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+      }
+
+      .card-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 15px;
+      }
+
+      .card-description {
+        font-size: 18px;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 25px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 28px;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+        cursor: pointer;
+        border: none;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, white, var(white));
+        color: white;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        background: rgba(30, 64, 175, 0.3);
+      }
+
+      .btn-outline {
+        background: rgba(30, 64, 175, 0.3);
+        color: white;
+        border: 2px solid var(--primary-color);
+      }
+
+      .btn-outline:hover {
+        background: rgba(56, 79, 155, 0.3);
+        color: white;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 30px;
+        background: var(--bg-white);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+      }
+
+      .feature-item:hover {
+        transform: translateX(5px);
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 18px;
+        flex-shrink: 0;
+      }
+
+      .feature-content h4 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+      }
+
+      .feature-content p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .testimonial {
+        background: var(--bg-white);
+        padding: 40px 30px;
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        position: relative;
+      }
+
+      .testimonial::before {
+        content: '"';
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        font-size: 4rem;
+        color: var(--accent-color);
+        font-family: serif;
+        line-height: 1;
+      }
+
+      .testimonial-content {
+        margin-top: 30px;
+        font-style: italic;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        margin-bottom: 25px;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .author-info h5 {
+        font-weight: 700;
+        color: var(--text-primary);
+        margin: 0;
+        font-size: 1.1rem;
+      }
+
+      .author-info .stars {
+        color: #fbbf24;
+        margin-top: 5px;
+      }
+
+      .stats-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .stat-item {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      .partnership-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .partnership-card {
+        background: var(--bg-white);
+        border-radius: 16px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+      }
+
+      .partnership-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .partnership-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 25px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, #10b981, #059669);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+      }
+
+      .commission-highlight {
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+
+      /* Header Styles */
+      .bd-header-top {
+        background: var(--bg-white);
+        padding: 10px 20px;
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .bd-header-top-left ul,
+      .bd-header-top-right ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+      }
+
+      .bd-header-top-left li a,
+      .bd-header-top-right li a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .bd-header-area {
+        background: var(--bg-white);
+        box-shadow: var(--shadow);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .bd-header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 0;
+      }
+
+      .bd-header-logo img {
+        max-width: 150px;
+      }
+
+      .bd-header-menu nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 30px;
+      }
+
+      .bd-header-menu nav ul li a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+      }
+
+      .bd-header-menu nav ul li a:hover {
+        color: var(--primary-color);
+      }
+
+      .bd-header-right {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .bd-header-meta {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .hamburger-menu {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-primary);
+      }
+
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-white);
+        z-index: 1001;
+        transition: right 0.3s ease;
+        padding: 20px;
+      }
+
+      .mobile-menu.active {
+        right: 0;
+      }
+
+      .mobile-menu ul {
+        list-style: none;
+        padding: 20px;
+        margin: 0;
+      }
+
+      .mobile-menu ul li {
+        margin-bottom: 20px;
+      }
+
+      .mobile-menu ul li a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .mobile-menu .bd-header-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-primary);
+      }
+
+      @media (max-width: 991px) {
+        .bd-header-menu nav {
+          display: none;
+        }
+
+        .hamburger-menu {
+          display: block;
+        }
+
+        .mobile-menu {
+          display: block;
+        }
+
+        .bd-header-top {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+
+        .bd-header-top-left ul,
+        .bd-header-top-right ul {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .bd-header-right {
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .section-title {
+          font-size: 2.2rem;
+        }
+
+        .cards-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .btn-group {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .feature-item {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .testimonials-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .bd-header-logo img {
+          max-width: 120px;
+        }
+      }
+    </style>
   </head>
+
   <body>
-    <div id="loading">
-      <div id="loading-center">
-        <div id="loading-center-absolute">
-          <div class="bd-preloader-content">
-            <div class="bd-preloader-logo">
-              <div class="bd-preloader-circle">
-                <svg
-                  width="190"
-                  height="190"
-                  viewBox="0 0 380 380"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    stroke="#DFE0E0"
-                    cx="190"
-                    cy="190"
-                    r="180"
-                    stroke-width="6"
-                    stroke-linecap="round"
-                  ></circle>
-                  <circle
-                    stroke="red"
-                    cx="190"
-                    cy="190"
-                    r="180"
-                    stroke-width="6"
-                    stroke-linecap="round"
-                  ></circle>
-                </svg>
-              </div>
-              <img
-                src="assets/images/favicon.png"
-                width="50"
-                height="auto"
-                alt="Favicon"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <header>
       <div class="bd-header-top style-two" id="topo">
         <div class="bd-header-top-left">
           <ul>
             <li>
-              <a href="mailto:ti@tffiscal.com.br"
-                ><span><i class="fa-sharp fa-light fa-envelope"></i></span
-                >ti@tffiscal.com.br</a
-              >
+              <a href="mailto:ti@tffiscal.com.br">
+                <span><i class="fa-sharp fa-light fa-envelope"></i></span>
+                ti@tffiscal.com.br
+              </a>
             </li>
             <li>
-              <a href="tel:+5518997284321"
-                ><span><i class="fa-solid fa-phone-volume"></i></span>+55 18
-                99728-4321</a
-              >
+              <a href="tel:+5518997284321">
+                <span><i class="fa-solid fa-phone-volume"></i></span>+55 18
+                99728-4321
+              </a>
             </li>
           </ul>
         </div>
         <div class="bd-header-top-right text-md-end">
           <ul>
             <li>
-              <a href="#"
-                ><span><i class="fa-light fa-location-dot"></i></span>Rua 12 de
+              <a href="#">
+                <span><i class="fa-light fa-location-dot"></i></span>Rua 12 de
                 Outubro, 1489, FDS, Vila do Estádio, Presidente Prudente/SP -
-                Brasil - CEP 19.015-090</a
-              >
+                Brasil - CEP 19.015-090
+              </a>
             </li>
           </ul>
         </div>
@@ -103,979 +704,640 @@
               <div class="bd-header-inner topo">
                 <div class="bd-header-left">
                   <div class="bd-header-logo">
-                    <a href="./"
-                      ><img src="assets/images/logo.png" alt="Logo TF Assessor"
-                    /></a>
+                    <a href="./">
+                      <img
+                        src="/i/assets/images/logo.png"
+                        alt="Logo TF Assessor"
+                      />
+                    </a>
                   </div>
                 </div>
                 <div class="bd-header-menu">
-                  <nav
-                    class="main-menu bd-mobile-menu-active d-none d-xl-block"
-                  >
+                  <nav class="main-menu d-none d-xl-block">
                     <ul>
-                      <li><a href="#topo">Início</a></li>
-                      <li><a href="#sobre">Sobre</a></li>
-                      <li><a href="#diferenciais">Diferenciais</a></li>
-                      <li><a href="#servicos">Serviços</a></li>
-                      <li><a href="#depoimentos">Depoimentos</a></li>
-                      <li><a href="#contato">Contato</a></li>
+                      <li>
+                        <a style="font-size: 18px" href="#topo">Início</a>
+                      </li>
+                      <li>
+                        <a style="font-size: 18px" href="#servicos">Serviços</a>
+                      </li>
+                      <li>
+                        <a style="font-size: 18px" href="#depoimentos"
+                          >Depoimentos</a
+                        >
+                      </li>
+                      <li>
+                        <a style="font-size: 18px" href="#parceiro"
+                          >Torne-se Parceiro</a
+                        >
+                      </li>
+                      <li>
+                        <a style="font-size: 18px" href="#contato">Contato</a>
+                      </li>
                     </ul>
                   </nav>
                 </div>
                 <div class="bd-header-right">
                   <div class="bd-header-meta">
-                    <a href="/zh/"
-                      ><img
-                        src="assets/images/china.svg"
+                    <a href="/i/zh/certificados">
+                      <img
+                        src="/i/assets/images/china.svg"
                         width="40"
-                        style="height: auto"
+                        height="auto"
                         alt="China"
-                    /></a>
-                    <a href="/br/"
-                      ><img
-                        src="assets/images/brasil.svg"
+                      />
+                    </a>
+                    <a href="/i/br/certificados">
+                      <img
+                        src="/i/assets/images/brasil.svg"
                         width="40"
                         height="auto"
                         alt="Brasil"
-                    /></a>
-                    <a href="/en/"
-                      ><img
-                        src="assets/images/eua.svg"
+                      />
+                    </a>
+                    <a href="/i/en/certificados">
+                      <img
+                        src="/i/assets/images/eua.svg"
                         width="40"
                         height="auto"
                         alt="EUA"
-                    /></a>
-                    <a class="bd-btn btn-primary" href="#contato"
-                      >Fale conosco
-                      <i class="fa-regular fa-arrow-right-long"></i
-                    ></a>
-                    <a
-                      class="bd-header-offcanvas sidebar-toggle"
-                      href="javascript:void(0)"
-                      ><i class="fa-sharp fa-solid fa-grid-round-2"></i
-                    ></a>
+                      />
+                    </a>
+                    <a href="/i/es/certificados">
+                      <img
+                        src="/i/assets/images/espanha.png"
+                        width="40"
+                        height="auto"
+                        alt="Espanha"
+                        style="border-radius: 3px"
+                      />
+                    </a>
+                    <a class="bd-btn btn-primary" href="#contato">
+                      Fale Conosco
+                      <i class="fa-regular fa-arrow-right-long"></i>
+                    </a>
+                    <span class="hamburger-menu">
+                      <i
+                        style="font-size: 18px"
+                        class="fa-sharp fa-solid fa-bars"
+                      ></i>
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div class="mobile-menu">
+        <span class="close-menu">
+          <i class="fa-solid fa-times"></i>
+        </span>
+        <ul>
+          <li><a href="#topo">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#parceiro">Torne-se Parceiro</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <div class="bd-header-meta">
+          <a href="/i/zh/certificados">
+            <img
+              src="/i/assets/images/china.svg"
+              width="40"
+              height="auto"
+              alt="China"
+            />
+          </a>
+          <a href="/i/br/certificados">
+            <img
+              src="/i/assets/images/brasil.svg"
+              width="40"
+              height="auto"
+              alt="Brasil"
+            />
+          </a>
+          <a href="/i/en/certificados">
+            <img
+              src="/i/assets/images/eua.svg"
+              width="40"
+              height="auto"
+              alt="EUA"
+            />
+          </a>
+          <a href="/i/es/certificados">
+            <img
+              src="/i/assets/images/espanha.png"
+              width="40"
+              height="auto"
+              alt="Espanha"
+              style="border-radius: 3px"
+            />
+          </a>
+          <a class="bd-btn btn-primary" href="#contato">
+            Fale Conosco
+            <i class="fa-regular fa-arrow-right-long"></i>
+          </a>
         </div>
       </div>
     </header>
-    <div class="fix">
-      <div class="offcanvas-area">
-        <div class="offcanvas-wrapper">
-          <div class="offcanvas-content">
-            <div
-              class="offcanvas-header d-flex justify-content-between align-items-center mb-25"
-            >
-              <img src="assets/images/logo.png" width="250" alt="" />
-              <div class="offcanvas-close">
-                <button class="offcanvas-close-icon animation--flip">
-                  <span class="offcanvas-m-lines">
-                    <span class="offcanvas-m-line line--1"></span
-                    ><span class="offcanvas-m-line line--2"></span
-                    ><span class="offcanvas-m-line line--3"></span>
-                  </span>
-                </button>
-              </div>
-            </div>
-            <div class="bd-mobile-menu-smaller">
-              <div class="bd-offcanvas-menu mb-25">
-                <nav></nav>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="offcanvas-overlay"></div>
-    <div class="offcanvas-overlay-white"></div>
+
     <main>
-      <!-- Banner -->
-      <section class="bd-banner-area theme-bg">
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">Certificado Digital em Poucos Minutos</h1>
+          <p class="hero-subtitle">Via Videoconferência</p>
+          <p class="hero-description">
+            Emissão rápida e segura de certificados digitais. De casa, do
+            trabalho, no Brasil ou em qualquer lugar do mundo. A TF Assessor
+            oferece a solução mais prática para suas necessidades digitais.
+          </p>
+          <div class="btn-group">
+            <a
+              href="https://parceiro.gestaoar.shop/certidoc/tf-fiscal"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              <i class="fa-regular fa-rocket"></i>
+              <p style="color: white">Solicitar Certificado</p>
+            </a>
+            <a
+              href="https://web.whatsapp.com/send?phone=5518997284321"
+              class="btn btn-outline"
+              target="_blank"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+              <p style="color: white">WhatsApp</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-white" id="servicos">
         <div class="container">
-          <div class="row gy-30 align-items-end justify-content-between">
-            <div class="col-xxl-8">
-              <div
-                class="bd-hero-right wow bdFadeInLeft"
-                data-wow-duration="0.5s"
-                data-wow-delay=".5s"
-              >
-                <span class="bd-hero-subtitle mb-15"
-                  >Bem-vindos à TF Assessor</span
+          <div class="section-header">
+            <h2 class="section-title">Nossos Certificados Digitais</h2>
+            <p class="section-description">
+              Escolha o tipo de certificado ideal para você e adquira de forma
+              simples, rápida e segura.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <img
+                  src="/i/img/Certidoc - Certidoc_files/e-cpf.png"
+                  alt="e-CPF"
+                  style="width: 100%; border-radius: 12px"
+                />
+              </div>
+              <div class="feature-content">
+                <h4>e-CPF</h4>
+                <p>
+                  Certificado digital para pessoas físicas, ideal para assinar
+                  documentos e acessar serviços governamentais.
+                </p>
+                <p><strong>Preço: R$ 130,00</strong></p>
+                <a
+                  style="font-size: 12px"
+                  href="https://parceiro.gestaoar.shop/certidoc/tf-assessor"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >Comprar Agora</a
                 >
-                <h1 class="bd-hero-title">Soluções Empresariais</h1>
-                <br />
-                <h4 class="bd-hero-title">
-                  Ajuda para estrangeiros conseguirem CPF e CNPJ no Brasil
-                </h4>
-                <br />
-                <p class="bd-hero-desc">
-                  Nosso objetivo é oferecer assistência empresarial completa,
-                  obtenção de dupla cidadania, soluções em sistemas e ajudar
-                  você a realizar seu sonho no Brasil.
-                </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <section id="sobre"></section>
-      <div
-        class="bd-banner-thumb wow bdFadeInUp"
-        data-wow-duration="0.5s"
-        data-wow-delay=".5s"
-      >
-        <img
-          src="assets/images/parceria_china_brasil.webp"
-          alt="Parceria China Brasil"
-        />
-      </div>
-      <!-- Sobre -->
-      <section class="bd-about-area section-space p-relative">
-        <div class="container">
-          <div class="row gy-30 justify-content-between">
-            <div class="col-xxl-6 col-xl-7 col-lg-7">
-              <div
-                class="bd-about-two-space wow bdFadeInUp"
-                data-wow-duration="0.5s"
-                data-wow-delay=".4s"
-              >
-                <h2 class="bd-section-title mb-20">Sobre a TF Assessor</h2>
-                <p class="bd-section-desc">
-                  Somos uma empresa de consultoria empresarial em diversos
-                  setores: sistemas, TI, NFe, recursos humanos, burocracias,
-                  despachos no Brasil e na China.
-                </p>
-                <div style="display: flex; gap: 5px">
-                  <div class="bd-about-btn">
-                    <a class="bd-btn btn-primary" href="#contato"
-                      >Queremos ajudar você!<i></i
-                    ></a>
-                  </div>
-                  <div class="bd-about-btn">
-                    <a
-                      class="bd-btn btn-primary"
-                      href="/i/br/certificados"
-                      target="_blank"
-                      style="color: white"
-                      >Obter certificado<i></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-xxl-5 col-xl-5 col-lg-5 wow bdFadeInUp"
-              data-wow-duration="0.5s"
-              data-wow-delay=".6s"
-            >
-              <div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
                 <img
-                  src="assets/images/bannerslider.webp"
-                  alt="Sobre TF Assessor"
+                  src="/i/img/Certidoc - Certidoc_files/e-cnpj.png"
+                  alt="e-CNPJ"
+                  style="width: 100%; border-radius: 12px"
                 />
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Parcerias -->
-      <section class="bd-testimonial-area section-space theme-bg p-relative">
-        <div class="bd-testimonial-shape">
-          <img src="assets/images/shape-1.webp" alt="" />
-        </div>
-        <div class="container mt-50 mb-50">
-          <div class="row gy-30">
-            <div class="col-xl-5">
-              <div
-                class="bd-section-title-wrapper wow bdFadeInUp"
-                data-wow-duration="0.5s"
-                data-wow-delay=".3s"
-              >
-                <h2 class="bd-section-title white-text mb-20">
-                  Nossos Parceiros Especialistas
-                </h2>
-                <p class="bd-section-desc white-text-7">
-                  Temos parceiros no governo, contabilidade, tributaristas,
-                  advogados e direito internacional.
+              <div class="feature-content">
+                <h4>e-CNPJ</h4>
+                <p>
+                  Certificado digital para empresas, necessário para emissão de
+                  notas fiscais eletrônicas e cumprimento de obrigações fiscais.
                 </p>
-                <p class="bd-section-desc white-text-7">
-                  Enviamos nossos melhores especialistas para resolver seus
-                  assuntos junto às repartições.
-                </p>
+                <p><strong>Preço: R$ 200,00</strong></p>
+                <a
+                  style="font-size: 12px"
+                  href="https://parceiro.gestaoar.shop/certidoc/tf-assessor"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >Comprar Agora</a
+                >
               </div>
             </div>
-            <div class="col-xl-7">
-              <div
-                class="bd-testimonial-one wow bdFadeInUp"
-                data-wow-duration="0.5s"
-                data-wow-delay=".3s"
-              >
-                <div class="swiper testimonialActive">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="bd-testimonial-wrapper">
-                        <div class="bd-testimonial-content">
-                          <div class="bd-testimonial-content-meta">
-                            <div class="bd-testimonial-rating">
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                            </div>
-                            <div class="bd-testimonial-quotation">
-                              <img
-                                src="assets/images/icon/testimonial-quote-icon.svg"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                          <p class="bd-testimonial-description">
-                            "Sensacional o trabalho realizado por essa equipe,
-                            parabéns a todos os envolvidos. Ótimos parceiros
-                            jurídicos e contábeis."
-                          </p>
-                        </div>
-                        <div class="bd-testimonial-avatar">
-                          <div class="thumb">
-                            <img src="assets/images/jeff_dep1.webp" alt="" />
-                          </div>
-                          <div class="meta">
-                            <h5 class="name">Jefferson</h5>
-                            <span>EJES</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="bd-testimonial-wrapper">
-                        <div class="bd-testimonial-content">
-                          <div class="bd-testimonial-content-meta">
-                            <div class="bd-testimonial-rating">
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                            </div>
-                            <div class="bd-testimonial-quotation">
-                              <img
-                                src="assets/images/icon/testimonial-quote-icon.svg"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                          <p class="bd-testimonial-description">
-                            "Atendimento excelente, equipe dedicada e soluções
-                            rápidas para nossos problemas empresariais."
-                          </p>
-                        </div>
-                        <div class="bd-testimonial-avatar">
-                          <div class="thumb">
-                            <img src="assets/images/depoimento.webp" alt="" />
-                          </div>
-                          <div class="meta">
-                            <h5 class="name">Maria</h5>
-                            <span>Empresa XYZ</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- BRICS -->
-      <br /><br />
-      <section class="bd-about-area section-space p-relative" id="sobre-brics">
-        <div class="container">
-          <div class="row gy-30 justify-content-between">
-            <div class="col-xxl-6 col-xl-7 col-lg-7">
-              <div
-                class="bd-about-two-space wow bdFadeInUp"
-                data-wow-duration="0.5s"
-                data-wow-delay=".4s"
-              >
-                <h2 class="bd-section-title mb-20">
-                  Você conhece a nova moeda internacional BRICS?
-                </h2>
-                <p class="bd-section-desc">
-                  Está sendo criada uma moeda internacional chamada BRICS, com o
-                  objetivo principal de simplificar o envio de valores entre
-                  Brasil e China.
-                </p>
-                <div class="bd-about-btn">
-                  <a class="bd-btn btn-primary" href="#contato"
-                    >Queremos ajudar você nesse assunto<i></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-xxl-5 col-xl-5 col-lg-5 wow bdFadeInUp"
-              data-wow-duration="0.5s"
-              data-wow-delay=".6s"
-            >
-              <div>
-                <img src="assets/images/sobre.webp" alt="Sobre BRICS" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Diferenciais -->
-      <section class="bd-service-area section-space theme-bg" id="diferenciais">
-        <div class="container">
-          <div
-            class="row justify-content-center wow bdFadeInUp mt-50"
-            data-wow-duration="0.5s"
-            data-wow-delay=".5s"
-          >
-            <div class="col-xl-6">
-              <div
-                class="bd-section-title-wrapper text-center section-title-space"
-              >
-                <h2 class="bd-section-title white-text">Nossos diferenciais</h2>
-              </div>
-            </div>
-          </div>
-          <div
-            class="row gy-30 wow bdFadeInUp"
-            data-wow-duration="0.5s"
-            data-wow-delay=".6s"
-          >
-            <div class="col-xl-12 col-lg-12">
-              <div class="bd-service-tab">
-                <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <button
-                      class="nav-link active"
-                      id="pills-one-tab"
-                      data-bs-toggle="pill"
-                      data-bs-target="#pills-one"
-                      type="button"
-                      role="tab"
-                      aria-controls="pills-one"
-                      aria-selected="true"
-                    >
-                      Atendimento simples
-                    </button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button
-                      class="nav-link"
-                      id="pills-two-tab"
-                      data-bs-toggle="pill"
-                      data-bs-target="#pills-two"
-                      type="button"
-                      role="tab"
-                      aria-controls="pills-two"
-                      aria-selected="false"
-                    >
-                      Atendimento rápido
-                    </button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button
-                      class="nav-link"
-                      id="pills-three-tab"
-                      data-bs-toggle="pill"
-                      data-bs-target="#pills-three"
-                      type="button"
-                      role="tab"
-                      aria-controls="pills-three"
-                      aria-selected="false"
-                    >
-                      Segurança
-                    </button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button
-                      class="nav-link"
-                      id="pills-four-tab"
-                      data-bs-toggle="pill"
-                      data-bs-target="#pills-four"
-                      type="button"
-                      role="tab"
-                      aria-controls="pills-four"
-                      aria-selected="false"
-                    >
-                      Exclusividade
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div class="bd-service-two p-relative">
-                <div class="tab-content" id="pills-tabContent">
-                  <div
-                    class="tab-pane fade show active"
-                    id="pills-one"
-                    role="tabpanel"
-                    aria-labelledby="pills-one-tab"
-                    tabindex="0"
-                  >
-                    <div
-                      class="row gy-30 align-items-center justify-content-between"
-                    >
-                      <div class="col-xl-4 col-lg-4">
-                        <div class="thumb">
-                          <img src="assets/images/diferencial01.webp" alt="" />
-                        </div>
-                      </div>
-                      <div class="col-xl-4 col-lg-5">
-                        <div class="content">
-                          <h3 class="title">Atendimento simples</h3>
-                          <p class="desc">
-                            Nossa equipe conta com chineses nativos,
-                            proporcionando atendimento direto, simples e
-                            eficiente.
-                          </p>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-3">
-                        <div class="thumb-chart">
-                          <img src="assets/images/grafico.webp" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="tab-pane fade"
-                    id="pills-two"
-                    role="tabpanel"
-                    aria-labelledby="pills-two-tab"
-                    tabindex="0"
-                  >
-                    <div
-                      class="row gy-30 align-items-center justify-content-between"
-                    >
-                      <div class="col-xl-4 col-lg-4">
-                        <div class="thumb">
-                          <img src="assets/images/diferencial02.webp" alt="" />
-                        </div>
-                      </div>
-                      <div class="col-xl-4 col-lg-5">
-                        <div class="content">
-                          <h3 class="title">Atendimento rápido</h3>
-                          <p class="desc">
-                            Buscamos ser breves e precisos nas necessidades da
-                            sua empresa.
-                          </p>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-3">
-                        <div class="thumb-chart">
-                          <img src="assets/images/grafico.webp" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="tab-pane fade"
-                    id="pills-three"
-                    role="tabpanel"
-                    aria-labelledby="pills-three-tab"
-                    tabindex="0"
-                  >
-                    <div
-                      class="row gy-30 align-items-center justify-content-between"
-                    >
-                      <div class="col-xl-4 col-lg-4">
-                        <div class="thumb">
-                          <img src="assets/images/diferencial03.webp" alt="" />
-                        </div>
-                      </div>
-                      <div class="col-xl-4 col-lg-5">
-                        <div class="content">
-                          <h3 class="title">Segurança</h3>
-                          <p class="desc">
-                            Validação e segurança em todas as suas solicitações.
-                          </p>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-3">
-                        <div class="thumb-chart">
-                          <img src="assets/images/grafico.webp" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="tab-pane fade"
-                    id="pills-four"
-                    role="tabpanel"
-                    aria-labelledby="pills-four-tab"
-                    tabindex="0"
-                  >
-                    <div
-                      class="row gy-30 align-items-center justify-content-between"
-                    >
-                      <div class="col-xl-4 col-lg-4">
-                        <div class="thumb">
-                          <img src="assets/images/diferencial04.webp" alt="" />
-                        </div>
-                      </div>
-                      <div class="col-xl-4 col-lg-5">
-                        <div class="content">
-                          <h3 class="title">Exclusividade</h3>
-                          <p class="desc">
-                            Atendimento exclusivo e personalizado para você e
-                            sua equipe.
-                          </p>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-3">
-                        <div class="thumb-chart">
-                          <img src="assets/images/grafico.webp" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Contadores -->
-      <section class="bd-counter-area counter-bg section-space-medium">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-12">
-              <div
-                class="bd-counter-two wow bdFadeInUp"
-                data-wow-duration="0.5s"
-                data-wow-delay=".5s"
-              >
-                <div class="bd-counter-two-item">
-                  <div class="icon">
-                    <img src="assets/images/icon/counter-icon-1.svg" alt="" />
-                  </div>
-                  <div>
-                    <h3 class="bd-counter-number">
-                      <i>+</i
-                      ><span
-                        data-purecounter-duration="1"
-                        data-purecounter-end="100"
-                        class="purecounter"
-                        >0</span
-                      >
-                    </h3>
-                    <div class="bd-counter-title">Projetos concluídos</div>
-                  </div>
-                </div>
-                <div class="bd-counter-two-item">
-                  <div class="icon">
-                    <img src="assets/images/icon/counter-icon-2.svg" alt="" />
-                  </div>
-                  <div>
-                    <h3 class="bd-counter-number">
-                      <i>+</i
-                      ><span
-                        data-purecounter-duration="1"
-                        data-purecounter-end="50"
-                        class="purecounter"
-                        >0</span
-                      >
-                    </h3>
-                    <div class="bd-counter-title">Projetos em andamento</div>
-                  </div>
-                </div>
-                <div class="bd-counter-two-item">
-                  <div class="icon">
-                    <img src="assets/images/icon/counter-icon-3.svg" alt="" />
-                  </div>
-                  <div>
-                    <h3 class="bd-counter-number">
-                      <i>+</i
-                      ><span
-                        data-purecounter-duration="1"
-                        data-purecounter-end="55"
-                        class="purecounter"
-                        >0</span
-                      >
-                    </h3>
-                    <div class="bd-counter-title">Parceiros comerciais</div>
-                  </div>
-                </div>
-                <div class="bd-counter-two-item">
-                  <div class="icon">
-                    <img src="assets/images/icon/counter-icon-4.svg" alt="" />
-                  </div>
-                  <div>
-                    <h3 class="bd-counter-number">
-                      <i>+</i
-                      ><span
-                        data-purecounter-duration="1"
-                        data-purecounter-end="25"
-                        class="purecounter"
-                        >0</span
-                      >
-                    </h3>
-                    <div class="bd-counter-title">Certificações</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Serviços -->
-      <section
-        class="bd-case-studies-area section-space primary-bg mt-50"
-        id="servicos"
-      >
-        <div
-          class="container-fluid case-studies-container-two wow bdFadeInUp"
-          data-wow-duration="0.5s"
-          data-wow-delay=".5s"
-        >
-          <div class="row gy-30 justify-content-center">
-            <div class="col-xxl-6 col-xl-8 col-lg-10">
-              <div
-                class="bd-section-title-wrapper section-title-space text-center"
-              >
-                <h2 class="bd-section-title mb-20">Nossos serviços</h2>
-                <h4 class="bd-section-title mb-20">
-                  Equipe de especialistas brasileiros para atender você
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div class="swiper caseStudiesActive">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="bd-case-studies-item-two">
-                  <div class="thumb">
-                    <a><img src="assets/images/servicos1.webp" alt="" /></a>
-                  </div>
-                  <div class="content">
-                    <h4 class="title underline"><a>Administrativas</a></h4>
-                    <p class="title underline">
-                      Soluções Administrativas completas.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="bd-case-studies-item-two">
-                  <div class="thumb">
-                    <a><img src="assets/images/servicos2.webp" alt="" /></a>
-                  </div>
-                  <div class="content">
-                    <h4 class="title underline"><a>Parceiros Contábeis</a></h4>
-                    <p class="title underline">
-                      Nossos parceiros contabilistas especializados nos assuntos
-                      fiscais do Brasil e China.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="bd-case-studies-item-two">
-                  <div class="thumb">
-                    <a><img src="assets/images/servicos3.webp" alt="" /></a>
-                  </div>
-                  <div class="content">
-                    <h4 class="title underline"><a>Parceiros Jurídicos</a></h4>
-                    <p class="title underline">
-                      Soluções jurídicas para sua empresa, contratos,
-                      jurisprudência, direito nacional e internacional.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="bd-case-studies-item-two">
-                  <div class="thumb">
-                    <a><img src="assets/images/servicos4.webp" alt="" /></a>
-                  </div>
-                  <div class="content">
-                    <h4 class="title underline"><a>Recursos Humanos</a></h4>
-                    <p class="title underline">
-                      Somos especialistas em recursos humanos e recrutamento
-                      para chineses.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="bd-case-studies-item-two">
-                  <div class="thumb">
-                    <a><img src="assets/images/servicos5.webp" alt="" /></a>
-                  </div>
-                  <div class="content">
-                    <h4 class="title underline">
-                      <a>Desenvolvimento de Softwares</a>
-                    </h4>
-                    <p class="title underline">
-                      Criamos soluções exclusivas: Sites, APP e sistemas para
-                      ajudar sua empresa.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="bd-case-studies-item-two">
-                  <div class="thumb">
-                    <a><img src="assets/images/servicos6.webp" alt="" /></a>
-                  </div>
-                  <div class="content">
-                    <h4 class="title underline"><a>Proteção de Dados</a></h4>
-                    <p class="title underline">
-                      Adequamos a sua empresa na LGPD e muito mais.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="bd-case-studies-item-two">
-                  <div class="thumb">
-                    <a><img src="assets/images/servicos7.webp" alt="" /></a>
-                  </div>
-                  <div class="content">
-                    <h4 class="title underline"><a>Marketing</a></h4>
-                    <p class="title underline">
-                      Desenvolvemos soluções de marketing e propaganda para seu
-                      negócio.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="bd-case-studies-item-two">
-                  <div class="thumb">
-                    <a><img src="assets/images/servicos8.webp" alt="" /></a>
-                  </div>
-                  <div class="content">
-                    <h4 class="title underline">
-                      <a>Relações Públicas e Tradutores</a>
-                    </h4>
-                    <p class="title underline">
-                      Temos especialistas no idioma Mandarim e Português do
-                      Brasil para lhe ajudar em eventos e atendimentos.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="dots-pagination justify-content-center mt-50"></div>
-          </div>
-        </div>
-      </section>
-      <!-- Depoimentos -->
-      <section
-        class="bd-testimonial-area section-space theme-bg p-relative"
-        id="depoimentos"
-      >
-        <div class="bd-testimonial-shape">
-          <img src="assets/images/shape-1.webp" alt="" />
-        </div>
-        <div class="container mt-50 mb-50">
-          <div class="row gy-30">
-            <div class="col-xl-5">
-              <div
-                class="bd-section-title-wrapper wow bdFadeInUp"
-                data-wow-duration="0.5s"
-                data-wow-delay=".3s"
-              >
-                <h2 class="bd-section-title white-text mb-20">Depoimentos</h2>
-                <p class="bd-section-desc white-text-7">
-                  O que nossos clientes dizem: Atendimento exclusivo e pontual.
-                </p>
-              </div>
-            </div>
-            <div class="col-xl-7">
-              <div
-                class="bd-testimonial-one wow bdFadeInUp"
-                data-wow-duration="0.5s"
-                data-wow-delay=".3s"
-              >
-                <div class="swiper testimonialActive">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="bd-testimonial-wrapper">
-                        <div class="bd-testimonial-content">
-                          <div class="bd-testimonial-content-meta">
-                            <div class="bd-testimonial-rating">
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                            </div>
-                            <div class="bd-testimonial-quotation">
-                              <img
-                                src="assets/images/icon/testimonial-quote-icon.svg"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                          <p class="bd-testimonial-description">
-                            "Sinto que a TF Assessor veio para solucionar as
-                            dificuldades das empresas em desenrolar e resolver
-                            rapidamente os assuntos burocráticos no Brasil."
-                          </p>
-                        </div>
-                        <div class="bd-testimonial-avatar">
-                          <div class="thumb">
-                            <img src="assets/images/hu_asia1.webp" alt="" />
-                          </div>
-                          <div class="meta">
-                            <h5 class="name">Hu</h5>
-                            <span>Asia Business</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="bd-testimonial-wrapper">
-                        <div class="bd-testimonial-content">
-                          <div class="bd-testimonial-content-meta">
-                            <div class="bd-testimonial-rating">
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                            </div>
-                            <div class="bd-testimonial-quotation">
-                              <img
-                                src="assets/images/icon/testimonial-quote-icon.svg"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                          <p class="bd-testimonial-description">
-                            "Equipe muito competente, atendimento rápido e
-                            soluções personalizadas para nossa empresa."
-                          </p>
-                        </div>
-                        <div class="bd-testimonial-avatar">
-                          <div class="thumb">
-                            <img src="assets/images/depoimento.webp" alt="" />
-                          </div>
-                          <div class="meta">
-                            <h5 class="name">Carlos</h5>
-                            <span>Empresa ABC</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class id="contato"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Contato -->
-      <section class="bd-contact-area section-space mt-50">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-xl-7 col-lg-8">
-              <div
-                class="bd-section-title-wrapper section-title-space text-center"
-              >
-                <h2 class="bd-section-title mb-20">Nossos contatos</h2>
-                <p class="bd-section-desc">
-                  Por favor, deixe seus dados de contato pelo WhatsApp ou WeChat
-                  que entraremos em contato o mais breve possível.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="row gy-30">
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="bd-contact-address-box">
-                <div class="icon"><i class="fa-solid fa-envelope"></i></div>
-                <div>
-                  <h6>E-mail</h6>
-                  <p>
-                    <a href="mailto:ti@tffiscal.com.br">ti@tffiscal.com.br</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="bd-contact-address-box">
-                <div class="icon"><i class="fa-solid fa-phone-volume"></i></div>
-                <div>
-                  <h6>Telefone e WhatsApp</h6>
-                  <p><a href="tel:+5518997284321">+55 18 99728-4321</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="bd-contact-address-box">
-                <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                <div>
-                  <h6>Endereço</h6>
-                  <p>
-                    <a href="#"
-                      >Rua 12 de Outubro, 1489, FDS, Vila do Estádio, Presidente
-                      Prudente/SP - Brasil - CEP 19.015-090</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br /><br /><br />
-          <div class="row justify-content-center">
-            <div class="col-xl-7 col-lg-8">
-              <div
-                class="bd-section-title-wrapper section-title-space text-center"
-              >
-                <h3 class="bd-section-title mb-20">
-                  WeChat ID: jeffersonrq100
-                </h3>
+
+            <div class="feature-item">
+              <div class="feature-icon">
                 <img
-                  src="assets/images/wechat.webp"
-                  alt="WeChat"
-                  loading="lazy"
-                  style="
-                    display: block;
-                    width: 100%;
-                    max-width: 380px;
-                    height: auto;
-                    margin: 0 auto;
-                    object-fit: contain;
-                  "
+                  src="/i/img/meet.jpg"
+                  alt="SafeID"
+                  style="width: 100%; border-radius: 12px"
                 />
               </div>
+              <div class="feature-content">
+                <h4>e-PJ</h4>
+                <p>
+                  Aplicação de identidade digital para autenticação segura e
+                  assinaturas eletrônicas.
+                </p>
+                <p><strong>Preço: R$ 230,00</strong></p>
+                <a
+                  style="font-size: 12px"
+                  href="https://parceiro.gestaoar.shop/certidoc/tf-assessor"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >Comprar Agora</a
+                >
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <!-- CTA -->
-      <section class="bd-cta-area section-space-big theme-bg p-relative z-3">
-        <div class="bd-cta-shape">
-          <div class="shape-1">
-            <img src="assets/images/cta-shape-1.webp" alt="" />
+
+      <section class="section section-light">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Certificados Disponíveis</h2>
+            <p class="section-description">
+              Escolha o certificado que melhor atende às suas necessidades.
+              Todos com validade legal e reconhecimento nacional e
+              internacional.
+            </p>
           </div>
-          <div class="shape-2">
-            <img src="assets/images/cta-shape-2.webp" alt="" />
+
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-icon">
+                <i class="fa-solid fa-user-check"></i>
+              </div>
+              <h3 class="card-title">Programa de Indicação</h3>
+              <div class="commission-highlight">Comissão de até 40%</div>
+              <p class="card-description">
+                Indique clientes e ganhe comissão por cada certificado emitido.
+                E-commerce personalizado com sua marca e pagamento garantido até
+                o dia 10 do mês seguinte.
+              </p>
+              <ul
+                style="
+                  text-align: left;
+                  color: var(--text-secondary);
+                  margin-bottom: 25px;
+                "
+              >
+                <li>Comissões de até 40%</li>
+                <li>Plataforma própria personalizada</li>
+                <li>Suporte técnico completo</li>
+                <li>Materiais de marketing inclusos</li>
+              </ul>
+              <a href="#contato" class="btn btn-primary"
+                >Torne-se um Indicador</a
+              >
+            </div>
+
+            <div class="partnership-card">
+              <div class="partnership-icon">
+                <i class="fa-solid fa-store"></i>
+              </div>
+              <h3 class="card-title">Programa de Revenda</h3>
+              <div class="commission-highlight">Preços Especiais</div>
+              <p class="card-description">
+                Adquira certificados digitais a preços especiais para revenda.
+                Tenha total autonomia para definir seus preços e atender seus
+                clientes.
+              </p>
+              <ul
+                style="
+                  text-align: left;
+                  color: var(--text-secondary);
+                  margin-bottom: 25px;
+                "
+              >
+                <li>Descontos progressivos por volume</li>
+                <li>Autonomia total de precificação</li>
+                <li>Suporte técnico dedicado</li>
+                <li>Treinamento completo incluso</li>
+              </ul>
+              <a style="font-size: 12px" href="#contato" class="btn btn-primary"
+                >Torne-se um Revendedor</a
+              >
+            </div>
+          </div>
+
+          <div
+            style="
+              text-align: center;
+              margin-top: 50px;
+              padding: 40px;
+              background: var(--bg-white);
+              border-radius: 16px;
+              box-shadow: var(--shadow);
+            "
+          >
+            <h4
+              style="
+                color: var(--text-primary);
+                font-size: 18px;
+                margin-bottom: 20px;
+              "
+            >
+              Pronto para Iniciar Sua Parceria?
+            </h4>
+            <p
+              style="
+                color: var(--text-secondary);
+                margin-bottom: 30px;
+                font-size: 18px;
+              "
+            >
+              Entre em contato e descubra como aumentar sua renda com a TF
+              Assessor.
+            </p>
+            <div class="btn-group">
+              <a href="#contato" class="btn btn-primary">
+                <i class="fa-solid fa-rocket"></i>
+                <p style="color: white">Solicitar Parceria</p>
+              </a>
+              <a
+                style="background: var(--secondary-color)"
+                href="https://web.whatsapp.com/send?phone=5518997284321&text=Olá! Gostaria de saber mais sobre os programas de parceria da CertiDoc."
+                class="btn btn-outline"
+                target="_blank"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+                <p style="font-size: 18px; color: white">
+                  Parcerias via WhatsApp
+                </p>
+              </a>
+            </div>
           </div>
         </div>
+      </section>
+
+      <section class="section section-white">
         <div class="container">
-          <div class="row gy-30 justify-content-between align-items-center">
-            <div class="col-xl-9 col-lg-9">
-              <h2 class="bd-section-title white-text">
-                <span class="line">Mensagem da equipe TF Assessor</span
-                ><br class="d-none d-lg-block" />"Estamos comprometidos em
-                ajudar você com a maior brevidade e solucionar suas
-                necessidades."
-              </h2>
+          <div class="section-header">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <p class="section-description">
+              Esclarecemos as principais dúvidas sobre certificação digital para
+              ajudar você a tomar uma decisão informada.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-question"></i>
+              </div>
+              <div class="feature-content">
+                <h4>Como funciona a videoconferência?</h4>
+                <p>
+                  O processo é simples e seguro. Você agenda um horário,
+                  conecta-se por videoconferência, e nossa equipe valida seus
+                  dados em tempo real.
+                </p>
+              </div>
             </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div class="feature-content">
+                <h4>Quanto tempo leva para receber?</h4>
+                <p>
+                  Após a videoconferência, seu certificado é emitido em até 15
+                  minutos e enviado diretamente para seu e-mail, pronto para uso
+                  imediato.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-file-certificate"></i>
+              </div>
+              <div class="feature-content">
+                <h4>Quais documentos são necessários?</h4>
+                <p>
+                  RG, CPF e comprovante de residência para e-CPF. Para e-CNPJ,
+                  também são necessários documentos da empresa, como contrato
+                  social e CNPJ.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-shield-check"></i>
+              </div>
+              <div class="feature-content">
+                <h4>É seguro e tem validade legal?</h4>
+                <p>
+                  Sim, nossos certificados seguem todos os padrões da ICP-Brasil
+                  e possuem validade legal, sendo aceitos por instituições
+                  públicas e privadas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-section">
+        <div class="container">
+          <h2 class="section-title" style="color: white; margin-bottom: 50px">
+            Números que Inspiram Confiança
+          </h2>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-number">16+</span>
+              <span class="stat-label">Anos de Experiência</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">10.000+</span>
+              <span class="stat-label">Certificados Emitidos</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">5.0</span>
+              <span class="stat-label">Avaliação no Google</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">400+</span>
+              <span class="stat-label">Avaliações Positivas</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-white" id="depoimentos">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">O que Nossos Clientes Dizem</h2>
+            <p class="section-description">
+              A TF Assessor possui avaliação máxima no Google. Mais de 400
+              clientes compartilharam suas experiências positivas conosco.
+            </p>
+          </div>
+
+          <div class="testimonials-grid">
+            <div class="testimonial">
+              <p class="testimonial-content">
+                O serviço prestado pela TF Assessor superou todas as
+                expectativas. Cuidaram de cada detalhe da minha situação e até
+                forneceram informações adicionais. Recomendo muito a empresa;
+                serviço excelente e altamente personalizado.
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar">CM</div>
+                <div class="author-info">
+                  <h5>Cereri de Mello</h5>
+                  <div class="stars">★★★★★ 5.0</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial">
+              <p class="testimonial-content">
+                Minha experiência com a TF Assessor foi a melhor possível;
+                fiquei muito satisfeito. Estava hesitante porque já havia obtido
+                meu certificado digital com outra empresa, mas arrisquei com o
+                sistema online da TF Assessor, e o atendimento foi claro,
+                objetivo e amigável.
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar">GB</div>
+                <div class="author-info">
+                  <h5>Geraldo Beltrani</h5>
+                  <div class="stars">★★★★★ 5.0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-light" id="contato">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p class="section-description">
+              Nossa equipe especializada está pronta para atendê-lo. Escolha a
+              forma mais conveniente de nos contatar.
+            </p>
+          </div>
+
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <h3 class="card-title">WhatsApp</h3>
+              <p class="card-description">
+                Atendimento rápido e personalizado via WhatsApp. Faça suas
+                perguntas e solicite seu certificado diretamente pelo chat.
+              </p>
+              <a
+                href="https://web.whatsapp.com/send?phone=5518997284321&text=Olá! Gostaria de solicitar meu certificado digital."
+                class="btn btn-primary"
+                target="_blank"
+                style="font-size: 14px"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+                Conversar no WhatsApp
+              </a>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <h3 class="card-title">E-mail</h3>
+              <p class="card-description">
+                Envie sua solicitação por e-mail e receba suporte detalhado com
+                todas as informações necessárias.
+              </p>
+              <a
+                href="mailto:ti@tffiscal.com.br?subject=Solicitação de Certificado Digital"
+                class="btn btn-primary"
+                style="font-size: 14px"
+              >
+                <i class="fa-solid fa-envelope"></i>
+                Enviar E-mail
+              </a>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <h3 class="card-title">Telefone</h3>
+              <p class="card-description">
+                Fale diretamente com nossa equipe por telefone. Horário de
+                atendimento: Segunda a Sexta, das 8h às 18h.
+              </p>
+              <a
+                href="tel:+5518997284321"
+                class="btn btn-primary"
+                style="font-size: 14px"
+              >
+                <i class="fa-solid fa-phone"></i>
+                Ligar Agora
+              </a>
+            </div>
+          </div>
+
+          <div
+            style="
+              text-align: center;
+              margin-top: 50px;
+              padding: 40px;
+              background: var(--bg-white);
+              border-radius: 16px;
+              box-shadow: var(--shadow);
+            "
+          >
+            <h4
+              style="
+                color: var(--text-primary);
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+              "
+            >
+              🚀 Pronto para Seu Certificado Digital?
+            </h4>
+            <p
+              style="
+                color: var(--text-secondary);
+                margin-bottom: 30px;
+                font-size: 18px;
+              "
+            >
+              Emitido em minutos • Via videoconferência • Válido em todo o
+              Brasil
+            </p>
+            <a
+              href="https://parceiro.gestaoar.shop/certidoc/tf-fiscal"
+              class="btn btn-primary"
+              target="_blank"
+              style="font-size: 1.1rem; padding: 16px 32px"
+            >
+              <i class="fa-solid fa-rocket"></i>
+              <p style="color: white">Solicitar Agora</p>
+            </a>
           </div>
         </div>
       </section>
     </main>
+
     <footer>
       <div class="bd-footer-bottom">
         <div class="bd-footer-menu">
@@ -1084,7 +1346,7 @@
               <div class="col-xl-12">
                 <div class="bd-footer-menu-content">
                   <img
-                    src="assets/images/logo.png"
+                    src="/i/assets/images/logo.png"
                     width="250"
                     height="auto"
                     alt="Logo TF Assessor"
@@ -1111,7 +1373,7 @@
         </div>
       </div>
     </footer>
-    <!-- Back to top -->
+
     <div
       class="progress-wrap"
       style="position: fixed; bottom: 24px; left: 24px; z-index: 1000"
@@ -1125,10 +1387,10 @@
         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
       </svg>
     </div>
-    <!-- WhatsApp Flutuante -->
+
     <a
       class="contact-badge"
-      href="https://web.whatsapp.com/send?phone=5518997284321&amp;text=Olá! Gostaria de saber mais sobre a TF Assessor."
+      href="https://web.whatsapp.com/send?phone=5518997284321&amp;text=Olá!%20Gostaria%20de%20falar%20sobre%20o%20CertiDoc."
       target="_blank"
     ></a>
     <style>
@@ -1139,7 +1401,7 @@
         height: 42px;
         line-height: 42px;
         transition: 0.3s;
-        background-image: url("/br/assets/images/whatsapp.png");
+        background-image: url("/i/assets/images/whatsapp.png");
         display: block;
         width: 55px;
         height: 55px;
@@ -1155,25 +1417,36 @@
         height: 65px;
       }
     </style>
-    <!-- JS -->
+
     <script
       data-cfasync="false"
-      src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+      src="/i/assets/js/email-decode.min.js"
     ></script>
-    <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/plugins/waypoints.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/plugins/swiper.min.js"></script>
-    <script src="assets/js/plugins/wow.js"></script>
-    <script src="assets/js/vendor/magnific-popup.min.js"></script>
-    <script src="assets/js/vendor/isotope.pkgd.min.js"></script>
-    <script src="assets/js/vendor/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/plugins/nice-select.min.js"></script>
-    <script src="assets/js/plugins/nouislider.min.js"></script>
-    <script src="assets/js/vendor/ajax-form.js"></script>
-    <script src="assets/js/plugins/easypie.js"></script>
-    <script src="assets/js/vendor/purecounter.js"></script>
-    <script src="assets/js/vendor/backtotop.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="/i/assets/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="/i/assets/js/plugins/waypoints.min.js"></script>
+    <script src="/i/assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="/i/assets/js/plugins/swiper.min.js"></script>
+    <script src="/i/assets/js/plugins/wow.js"></script>
+    <script src="/i/assets/js/vendor/magnific-popup.min.js"></script>
+    <script src="/i/assets/js/vendor/isotope.pkgd.min.js"></script>
+    <script src="/i/assets/js/vendor/imagesloaded.pkgd.min.js"></script>
+    <script src="/i/assets/js/plugins/nice-select.min.js"></script>
+    <script src="/i/assets/js/plugins/nouislider.min.js"></script>
+    <script src="/i/assets/js/vendor/ajax-form.js"></script>
+    <script src="/i/assets/js/plugins/easypie.js"></script>
+    <script src="/i/assets/js/vendor/purecounter.js"></script>
+    <script src="/i/assets/js/vendor/backtotop.js"></script>
+    <script src="/i/assets/js/main.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".hamburger-menu").click(function () {
+          $(".mobile-menu").toggleClass("active");
+        });
+
+        $(".close-menu").click(function () {
+          $(".mobile-menu").removeClass("active");
+        });
+      });
+    </script>
   </body>
 </html>
