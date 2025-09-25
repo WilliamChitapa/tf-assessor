@@ -72,7 +72,7 @@
     />
 
     <link rel="icon" type="image/png" href="/i/en/assets/images/favicon.png" />
-
+    7
     <noscript
       ><meta http-equiv="refresh" content="0; url=/i/br/certificados.html"
     /></noscript>
@@ -101,17 +101,25 @@
     </style>
   </head>
   <body>
-    <div class="wrap">
-      <p>Redirecionando para certificados...</p>
-      <div class="links">
-        <a href="/i/br/certificados.html">Acessar certificados diretamente</a>
-      </div>
-    </div>
-
     <script>
       (function () {
-        // Redireciona diretamente para certificados.html
-        var dest = "/i/br/certificados.html";
+        // Pega o idioma do navegador
+        var lang = navigator.language || navigator.userLanguage;
+        lang = lang.toLowerCase();
+
+        // Mapeia os idiomas para as PASTAS (index.html dentro de cada idioma)
+        var langMap = {
+          pt: "/i/br/",
+          "pt-br": "/i/br/",
+          en: "/i/en/",
+          zh: "/i/zh/",
+          "zh-cn": "/i/zh/",
+          es: "/i/es/",
+        };
+
+        var dest = langMap[lang] || "/i/br/";
+
+        // Faz o redirecionamento
         window.location.replace(dest);
       })();
     </script>
