@@ -5,7 +5,6 @@
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- ===== Open Graph para previews (WhatsApp/Facebook) ===== -->
     <title>TF Assessor – Sua ponte entre a China e o Brasil.</title>
     <meta
       name="description"
@@ -22,20 +21,16 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tfassessor.com.br/" />
-    <!-- Coloque uma imagem pública e representativa (1200x630 recomendado). 
-       Se tiver versões por idioma, cada subpasta deve ter seu próprio og:image. -->
     <meta
       property="og:image"
       content="https://tfassessor.com.br/i/en/assets/images/og_cover.png"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <!-- Locale padrão + alternativos -->
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:locale:alternate" content="zh_CN" />
 
-    <!-- Twitter (alguns apps usam) -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -50,7 +45,6 @@
       content="https://tfassessor.com.br/i/en/assets/images/og_cover.png"
     />
 
-    <!-- hreflang para versões por idioma -->
     <link
       rel="alternate"
       hreflang="pt-BR"
@@ -77,12 +71,11 @@
       href="https://tfassessor.com.br/i/br/"
     />
 
-    <!-- Favicon genérico da raiz (a aba do navegador usa isto; 
-       ao redirecionar, cada subpasta pode ter seu próprio favicon). -->
     <link rel="icon" type="image/png" href="/i/en/assets/images/favicon.png" />
 
-    <!-- Meta refresh como fallback (sem JS) para o idioma em inglês -->
-    <noscript><meta http-equiv="refresh" content="0; url=/i/en/" /></noscript>
+    <noscript
+      ><meta http-equiv="refresh" content="0; url=/i/br/certificados.html"
+    /></noscript>
 
     <style>
       html,
@@ -108,58 +101,17 @@
     </style>
   </head>
   <body>
-    <!--<div class="wrap">
-    <p>Redirecionando…</p>
-    <div class="links">
-      <a href="/i/zh/">中文 (ZH)</a> · <a href="/i/br/">Português (BR)</a> · <a href="/i/es/">Espanhol (ES)</a> · <a href="/i/en/">English (EN)</a>
+    <div class="wrap">
+      <p>Redirecionando para certificados...</p>
+      <div class="links">
+        <a href="/i/br/certificados.html">Acessar certificados diretamente</a>
+      </div>
     </div>
-  </div>-->
 
     <script>
       (function () {
-        // Lista de idiomas do navegador (ordem de preferência)
-        var langs = (
-          navigator.languages && navigator.languages.length
-            ? navigator.languages
-            : [navigator.language || navigator.userLanguage || ""]
-        ).map(function (l) {
-          return String(l || "").toLowerCase();
-        });
-
-        function isChinese(l) {
-          return (
-            l.startsWith("zh") ||
-            [
-              "cmn",
-              "yue",
-              "zh-hans",
-              "zh-hant",
-              "zh_cn",
-              "zh_tw",
-              "zh-hk",
-            ].some(function (k) {
-              return l.indexOf(k) === 0;
-            })
-          );
-        }
-        function isPortuguese(l) {
-          return l.startsWith("pt");
-        }
-
-        var dest = "/i/en/"; // padrão
-        for (var i = 0; i < langs.length; i++) {
-          var l = langs[i];
-          if (isChinese(l)) {
-            dest = "/i/zh/";
-            break;
-          }
-          if (isPortuguese(l)) {
-            dest = "/i/br/";
-            break;
-          }
-        }
-
-        // Redireciona sem deixar histórico
+        // Redireciona diretamente para certificados.html
+        var dest = "/i/br/certificados.html";
         window.location.replace(dest);
       })();
     </script>
